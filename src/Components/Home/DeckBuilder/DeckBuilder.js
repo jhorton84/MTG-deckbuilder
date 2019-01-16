@@ -1544,6 +1544,7 @@ class DeckBuilder extends Component {
             console.log('postUserCardToTheServer response', response)
             this.props.updateDeckList(response.data)
         })
+        this.cancelSelectCard();
     }
 
     //This function is used to update a card in the deck by swapping it with another card.
@@ -1584,7 +1585,11 @@ class DeckBuilder extends Component {
         })
     }
 
-
+    cancelSelectCard = () => {
+        console.log('selectedCard', this.props.selectedCard);
+        this.props.updateSelectedCard(null);
+        this.props.updateSelectedName(null);
+    }
     
 
     render() {
@@ -1632,6 +1637,15 @@ class DeckBuilder extends Component {
                 {/* <div className='magic-cards'>
                     {magicCards}
                 </div> */}
+                
+                <div className={this.props.selectedCard ?'selectedCard-background' : 'hide'}>
+                    <div className='selectedCard-container'>
+                        <h2>{this.props.selectedName}</h2>
+                        <img src={this.props.selectedCard} alt=''/>
+                        <button className='cancel' onClick={()=>this.cancelSelectCard()}>X</button>
+                        <button onClick={()=>{this.postUserCardToTheServer()}}>Add to Deck</button>
+                    </div>
+                </div>
             </div>
         )
     }

@@ -15,6 +15,7 @@ class SavedDecks extends Component {
 
     componentDidMount() {
         this.getUserDecks();
+        this.getUserDeckCards();
     }
 
     getUserDecks = () => {
@@ -27,7 +28,7 @@ class SavedDecks extends Component {
     getUserDeckCards = (deck_id) => {
         console.log('decks id',this.props.decks.id);
         console.log('deck_id =======>', deck_id);
-        axios.get(`/api/deckCards/${deck_id}`).then(response => {
+        axios.get(`/api/deckCards/${deck_id && deck_id}`).then(response => {
             console.log('userdeckCards response', response.data)
             this.props.updateUserDeckCards(response.data)
         })
@@ -45,7 +46,7 @@ class SavedDecks extends Component {
         console.log('userDecks images', this.props.decks)
         const userDecks = this.props.decks.map(deck => {
         return (
-            <div className='user-deck'>
+            <div className={this.props.user ? 'user-deck' : 'hide'}>
                 <button onClick={()=> {this.deleteDeck(deck.id)}} >x</button>
                 <div className='deck-images'>
                     <img src={deck.deckimage} onClick={()=> {this.getUserDeckCards(deck.id)}}  />

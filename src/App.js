@@ -44,9 +44,20 @@ class App extends Component {
   }
 
   render() {
-
+    const { user } = this.props;
     return (
       <div className="App">
+          <div className='login'>
+            <div className='logged-user'>
+            
+            
+                <img src={user ? user.picture : ''} />
+                <button className={this.props.user ? 'hide' : 'logged-user-button'} onClick={this.login}>Log in</button>
+                <button className={this.props.user ? 'logged-user-button' : 'hide'} onClick={this.logout}>Log out</button>
+                {/* {user ? user.name : 'Please Log in!'} */}
+            </div>
+                        
+          </div>
           <Header 
             login={this.login}
             logout={this.logout}

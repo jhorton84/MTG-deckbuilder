@@ -7,6 +7,8 @@ dotenv.config();
 const ac = require('./authController');
 const cc = require('./controller');
 
+
+
 const app = express();
 app.use(bodyParser.json());
 app.use(session({
@@ -22,6 +24,9 @@ app.use(session({
 massive(process.env.CONNECTION_STRING).then(database => {
     app.set('db', database)
 });
+
+
+app.use( express.static( `${__dirname}/../build` ) );
 
 // Endpoints
 //auth0 endpoints
@@ -39,7 +44,13 @@ app.post('/api/decks', cc.createDeck);
 app.delete('/api/decks/:id', cc.deleteDeck);
 app.get('/api/deckCards/:id', cc.getUserDeckCards);
 
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
+
 const PORT = 4000;
 app.listen(PORT, ()=> {
     console.log(`The server is listening on port: ${PORT}`)
 });
+

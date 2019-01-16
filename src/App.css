@@ -29,6 +29,7 @@ body,
   background-attachment: fixed;
   background-size: cover;
   background-position-y: -40px;
+  box-shadow: 0 5px 15px rgb(18, 18, 18);
 }
 
 header {
@@ -48,13 +49,14 @@ header {
 }
 
 .header-fade {
-  /* background: rgba(0, 0, 0, 0.427); */
+  /* background: white; */
   /* width: 150vw; */
-  /* height: 100%; */
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 50px;
+  margin-right: 50px;
+  margin-left: 50px;
 
 }
 
@@ -63,6 +65,7 @@ header {
   height: 50px;
   display: flex;
   align-items: center;
+  text-shadow: 2px 2px 2px #000;
   /* background: green; */
 }
 
@@ -97,38 +100,53 @@ header p {
   margin-left: 25px;
   color: white;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
+  text-shadow: 2px 2px 2px #000;
 }
 
 .login {
-  /* background: yellow; */
+  /* height: 150px; */
+  background: rgb(196, 196, 196);
   display: flex;
-  width: 20vw;
+  /* width: 20vw; */
   justify-content: space-between;
   flex-direction: column;
 }
 
 .logged-user {
-  height: 50px;
+  /* height: 80px; */
+  /* background: green; */
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 20px;
+  
+  justify-content: flex-end;
+  /* flex-direction: column; */
+  margin-right: 50px;
+  
+  /* font-size: 20px; */
 }
 
 .logged-user img {
-  height: 50px;
+  height: 30px;
   border-radius: 50%;
   margin: 5px;
+  box-shadow: 2px 2px 2px rgb(16, 16, 16);
 }
 
-.login-buttons button {
+.logged-user button {
   margin: 5px;
   background: goldenrod;
   color: black;
   border-radius: 5px;
   border: none;
+  box-shadow: 2px 2px 2px #000;
+  /* text-shadow: 1px 1px 1mpx rgb(0, 0, 0); */
+}
+
+.logged-user button:hover {
+  background: black;
+  color: goldenrod;
+  /* box-shadow: 2px 2px 2px rgb(255, 255, 255); */
 }
 
 /* All pages */
@@ -151,7 +169,7 @@ header p {
 }
 
 .home-component {
-  height: calc(100vh - 290px);
+  height: calc(100vh - 350px);
   background: rgba(254, 254, 254, 0.071);
   width: 100%;
   
@@ -172,7 +190,7 @@ header p {
   width: 100%;
   color: black;
   position: fixed;
-  top: 200px;
+  top: 240px;
 }
 .searchTools-component {
   height: 50px;
@@ -193,6 +211,7 @@ header p {
   color: white;
   margin: 5px;
   display: flex;
+  align-items: center;
 }
 .colorSelector {
   margin: 10px;
@@ -215,7 +234,7 @@ header p {
 
 .save-deck-button {
   position: fixed;
-  top: 200px;
+  top: 240px;
   right: 50px;
 }
 
@@ -249,6 +268,73 @@ header p {
   max-width: 186.25px;
   max-height: 260px;
 }
+/* container holding the selected card */
+.selectedCard-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  margin-left: -70px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.783);
+  z-index: 50;
+}
+
+.selectedCard-container {
+  position: absolute;
+  /* background: pink; */
+  /* width: 100%;
+  height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* image of the selected card */
+.selectedCard-container img {
+  min-width: 372.5px;
+  min-height: 520px;
+  max-width: 372.5px;
+  max-height: 520px;
+  /* z-index: 50; */
+}
+/* button on the selected card that puts the card in decklist */
+.selectedCard-container button {
+  margin: 10px;
+  /* border: pink; */
+  height: 30px;
+  width: 80px;
+  border-radius: 10px;
+}
+
+.selectedCard-container .cancel {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+  position: absolute;
+  top: 30px;
+  right: -25px;
+}
+
+.cancel button {
+  /* position: absolute; */
+  margin-top: 0;
+  /* top: 10px; */
+}
+
+.selectedCard-container h2 {
+  font-size: 50px;
+  
+}
+
+.hide {
+  display: none;
+}
 /* deckbuilder component right side */
 .userDeck-deckbuilder {
   width: 40vw;
@@ -261,51 +347,58 @@ header p {
 /* selected card and decklist */
 .UserDeck-component {
   width: 100%;
+  height: 100%;
   margin: 0;
   display:flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   flex-direction: column;
   background-image: url('http://i.imgur.com/590xacb.png');
   background-size: cover;
+  background-attachment: fixed;
+  background-position: 10px 10px;
   color: black;
+  position: relative;
   /* background: black; */
 }
-/* container holding the selected card */
-.selectedCard-container {
-  display:flex;
-  flex-direction: column;
-  /* justify-content: center; */
+
+/* text that shows the number of cards in the cards array in state */
+.counter {
+  position: absolute;
+  margin-right: 10px;
+  left: 0vw;
+  background: black;
+  color: white;
+  width: 110px;
+  height: 30px;
+  display: flex;
   align-items: center;
-  /* margin: 5px; */
-  /* margin-top: 0; */
+  justify-content: center;
 }
-/* image of the selected card */
-.selectedCard-container img {
-  min-width: 186.25px;
-  min-height: 260px;
-  max-width: 186.25px;
-  max-height: 260px;
-}
-/* button on the selected card that puts the card in decklist */
-.selectedCard-container button {
-  margin: 10px;
-}
+
+
+
 /* container of deck cards */
 .DeckList {
   display:flex;
   justify-content: center;
-  flex-direction: row;
-  width: 100%;
-  height: 40%;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* flex-direction: row; */
+  /* width: 100%; */
+  /* height: 100%; */
   overflow-y: scroll;
   overflow-x: hidden;
   flex-wrap: wrap;
 }
 
-
-/* .noDeck {
-  display: none;
-} */
+.card {
+  height: 180px;
+  /* width:25%; */
+  position: relative;
+  /* background: pink;
+  border: solid white; */
+}
 
 /* each deck card and the button container */
 .decklist-card {
@@ -318,10 +411,11 @@ header p {
 }
 /* images of deck cards */
 .decklist-card img {
-  min-width: 186.25px;
-  min-height: 260px;
-  max-width: 186.25px;
-  max-height: 260px;
+  min-width: 93.125px;
+  min-height: 130px;
+  max-width: 93.125px;
+  max-height: 130px;
+  margin: 3px;
 }
 /* delete button on deck cards */
 .decklist-card .delete {
@@ -331,8 +425,8 @@ header p {
   color: white;
   background-color: black;
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -8px;
+  right: -8px;
 }
 
 .CreateDeck-component {
@@ -415,25 +509,25 @@ header p {
 /* SAVEDDECKS-COMPONENT page */
 .saved-decks{
   height: calc(100vh - 290px);
-  width: 100%;
-  display:flex;
+  /* display:flex; */
   justify-content: center;
   /* background: rgba(254, 254, 254, 0.071); */
   flex-direction: column;
+  flex-wrap: wrap;
   
 }
 
 .saved-title {
+  width: 100%;
   /* background: red; */
-  height: 50px;
-  position: absolute;
+  height: 5%;
 }
 
 .saved-title h1 {
   /* background: pink; */
-  position: relative;
-  top: -210px;
-  right: 650px;
+  position: absolute;
+  top: 235px;
+  /* left: 10px; */
   font-size: 50px;
   color: goldenrod;
   text-shadow:
@@ -445,7 +539,7 @@ header p {
 }
 
 .decks {
-  width: 100%;
+  /* width: 100%; */
   height: 50%;
   display: flex;
   justify-content: center;
@@ -463,14 +557,15 @@ header p {
 
 .user-deck {
   margin: 10px;
+  margin-bottom: 70px;
   height: 320px;
   width: 250px;
   display: flex;
   align-items: center;
-  background: rgba(0, 14, 18, 0.406);
+  background: rgba(0, 19, 24, 0.605);
   flex-direction: column;
   /* overflow: hidden; */
-  box-shadow: 0px 12px 22px 1px #333;
+  box-shadow: 12px 12px 20px 1px #333;
   border-radius: 15px;
 }
 
@@ -513,7 +608,7 @@ header p {
 }
 
 .userDeckCards {
-  height:50%;
+  margin-top: 20px;
   width: 100%;
   /* background: red; */
   display:flex;
@@ -527,7 +622,7 @@ header p {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 90%;
+  height: calc(50vh - 230px);
   /* border: solid black; */
   overflow-y: scroll;
   overflow-x: hidden;
@@ -540,8 +635,16 @@ header p {
   height: 250px;
 }
 
+.userDeckCards-edit-button {
+  position: absolute;
+  right: 100px;
+  
+}
+
 .userDeckCards-edit-button button{
-  position: fixed;
+  position: relative;
+  top: 10px;
+  
 }
 
 .active  {

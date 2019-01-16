@@ -15,7 +15,7 @@ class UserDeckCards extends Component {
         const userDeckCardsList = this.props.userDeckCards.map(card => {
             console.log('cards from the deck', card)
             return (
-                <div className='deck-card-images'>
+                <div className={this.props.user ? 'deck-card-images' : 'hide'}>
                     <img src={card.imageurl} />
                 </div>
             )
@@ -34,7 +34,8 @@ class UserDeckCards extends Component {
 
 const mapStateToProps = state => {
     return {
-        userDeckCards: state.userDeckCards
+        userDeckCards: state.userDeckCards,
+        user: state.user
     }
 }
 

@@ -40,13 +40,15 @@ class UserDeck extends Component {
         return (
             <div className='UserDeck-component'>
                 {/* UserDeck */}
-                <div className='selectedCard-container'>
+                {/* <div className='selectedCard-container'>
                     <h2>{this.props.selectedName}</h2>
                     <img src={this.props.selectedCard} alt=''/>
                     <button onClick={()=>{this.props.postUserCardToTheServer()}}>Add to Deck</button>
+                </div> */}
+                <div className='counter'>
+                    Deck: {myDeck.length}/60
                 </div>
-                Deck: {myDeck.length}/60
-                <div className={myDeck.length? 'DeckList' : 'noDeck'}>
+                <div className={myDeck.length? 'DeckList' : 'hide'}>
                     
                     {myDeck}
                 </div>
