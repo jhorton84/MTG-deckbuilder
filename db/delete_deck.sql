@@ -1,0 +1,1 @@
+delete from decks where decks.id = ${id};
