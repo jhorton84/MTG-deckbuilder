@@ -8,8 +8,8 @@ const ac = require('./authController');
 const cc = require('./controller');
 
 
-
 const app = express();
+
 app.use(bodyParser.json());
 app.use(session({
     secret: process.env.SESSION_SECRET,
