@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
 import { connect } from 'react-redux';
 import { updateSelectedCard, updateSelectedName } from '../../../../ducks/reducer';
 
@@ -20,14 +19,28 @@ class SearchedCards extends Component {
         
             return card.card_faces ? 
             card.card_faces.find(e => e.hasOwnProperty('image_uris')) ? 
-                <>
-                    <img className='magic-card' src={card.card_faces[0].image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
-                    <img className='magic-card' src={card.card_faces[1].image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
-                </>
-                : <img className='magic-card' src = {card.image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
-            : 
-            <img className='magic-card' src={card.image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
-            
+            //     <>
+            //         <img className='magic-card' src={card.card_faces[0].image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
+            //         <img className='magic-card' src={card.card_faces[1].image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
+            //     </>
+            //     : <img className='magic-card' src = {card.image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
+            // : 
+            // <img className='magic-card' src={card.image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
+                    <>
+                        <div className='flip-card'>
+                            <div className='flip-card-inner'>
+                                <div className='magic-card-front'>
+                                    <img className='magic-card' src={card.card_faces[0].image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
+                                </div>
+                                <div className='magic-card-back'>
+                                    <img className='magic-card' src={card.card_faces[1].image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                    : <img className='magic-card' src={card.image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
+                :
+                <img className='magic-card' src={card.image_uris.png} alt='' key={card.id} onClick={() => {this.props.setCard(card)}} />
         });
 
         return (

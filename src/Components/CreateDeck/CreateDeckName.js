@@ -15,16 +15,21 @@ class CreateDeckName extends Component {
     saveDeckCards = () => {
         console.log('save deck props', this.props);
         const { deckList, deckImage, deckName, user } = this.props;
-        let deck = {
-            deckName,
-            deckImage,
-            user_id : user.auth0_id
+        if(this.props.user) { 
+            let deck = {
+                deckName,
+                deckImage,
+                user_id : user.auth0_id
+            }
+            console.log('deck object', deck);
+            axios.post('/api/decks', {deckList, deck}).then(response => {
+                console.log(' saved decks ------->',response)
+                this.props.updateDecks(response.data);
+            })
+        } else {
+            alert('You must log in to save a deck!')
         }
-        console.log('deck object', deck);
-        axios.post('/api/decks', {deckList, deck}).then(response => {
-            console.log(' saved decks ------->',response)
-            this.props.updateDecks(response.data);
-        })
+         
     }
     render(){
         return (

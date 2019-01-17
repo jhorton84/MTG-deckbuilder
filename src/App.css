@@ -137,7 +137,7 @@ header p {
   margin: 5px;
   background: goldenrod;
   color: black;
-  border-radius: 5px;
+  border-radius: 3px;
   border: none;
   box-shadow: 2px 2px 2px #000;
   /* text-shadow: 1px 1px 1mpx rgb(0, 0, 0); */
@@ -268,6 +268,55 @@ header p {
   max-width: 186.25px;
   max-height: 260px;
 }
+
+/* each individual card with multiple faces and flip */
+.flip-card {
+  /* background-color: black; */
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.magic-card-front, .magic-card-back {
+  position: absolute;
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+  backface-visibility: hidden;
+}
+.magic-card-front {
+  /* background-color: #bbb; */
+  color: black;
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+}
+.magic-card-back {
+  /* background-color: dodgerblue; */
+  /* color: white; */
+  transform: rotateY(180deg);
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+}
+
 /* container holding the selected card */
 .selectedCard-background {
   position: absolute;

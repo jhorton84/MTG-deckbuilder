@@ -39,10 +39,10 @@ function ColorSelector(props) {
                 <label for='color'>Green</label>
             </div>
             
-            {/* <div className='colorSelector'>
-                <input type='checkbox' name='colorAll' checked={props.colorAll} id='color' defaultValue={true} onClick={e => props.handleCheckBox(e.target.name, 'WUBRG')}/>
-                <label for='color'>All</label>
-            </div> */}
+            <div className='colorSelector'>
+                <input type='checkbox' name='colorLess' checked={props.colorLess} id='color' defaultValue={true} onClick={e => props.handleCheckBox(e.target.name, 'C')}/>
+                <label for='color'>Colorless</label>
+            </div>
             
         </div>
     )
