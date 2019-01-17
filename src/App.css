@@ -335,13 +335,25 @@ header p {
 .selectedCard-container {
   position: absolute;
   /* background: pink; */
-  /* width: 100%;
-  height: 100%; */
+  width: 375px;
+  height: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+.selectedCard-imageContainer {
+  position: relative;
+  /* background: pink; */
+  margin: 15px;
+}
+
+.selectedCard-imageContainer button {
+  position: absolute;
+  right: -10px;
+}
+
 /* image of the selected card */
 .selectedCard-container img {
   min-width: 372.5px;
@@ -351,11 +363,11 @@ header p {
   /* z-index: 50; */
 }
 /* button on the selected card that puts the card in decklist */
-.selectedCard-container button {
-  margin: 10px;
+.selectedCard-add {
+  /* margin: 15px; */
   /* border: pink; */
-  height: 30px;
-  width: 80px;
+  height: 40px;
+  width: 100px;
   border-radius: 10px;
 }
 
@@ -366,8 +378,8 @@ header p {
   color: white;
   background-color: black;
   position: absolute;
-  top: 30px;
-  right: -25px;
+  margin-top: 0px;
+  margin-right: 0px;
 }
 
 .cancel button {

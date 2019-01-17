@@ -160,9 +160,11 @@ class DeckBuilder extends Component {
                 <div className={this.props.selectedCard ?'selectedCard-background' : 'hide'}>
                     <div className='selectedCard-container'>
                         <h2>{this.props.selectedName}</h2>
-                        <img src={this.props.selectedCard} alt=''/>
-                        <button className='cancel' onClick={()=>this.cancelSelectCard()}>X</button>
-                        <button onClick={()=>{this.postUserCardToTheServer()}}>Add to Deck</button>
+                        <div className='selectedCard-imageContainer'>
+                            <img src={this.props.selectedCard} alt=''/>
+                            <button className='cancel' onClick={()=>this.cancelSelectCard()}>X</button>
+                        </div>
+                        <button className='selectedCard-add' onClick={()=>{this.postUserCardToTheServer()}}>Add to Deck</button>
                     </div>
                 </div>
             </div>
