@@ -20,7 +20,6 @@ class UserDeck extends Component {
     }
 
     render() {
-        console.log('props-userDeck', this.props)
         console.log('userDeck props', this.props);
         const myDeck = this.props.deckList.map(card => {
             console.log('userDeck card', card);

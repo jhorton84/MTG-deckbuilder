@@ -23,7 +23,7 @@ const INITIAL_STATE = {
     // not used. Potential field input to search through the deck for a specific card
     searchTermDeck: '',
     
-    // list of cards saved in the server selected from cards
+    // list of cards selected from cards to add to a deck displayed in deckbuilder
     deckList: [],
 
     //user logged in

@@ -5,7 +5,20 @@ import { setUser } from '../../ducks/reducer';
 import { withRouter } from 'react-router';
 
 class Header extends Component {
-    
+    constructor() {
+        super() 
+        this.state = {
+            toggle: false
+        }
+    }
+
+    toggler = () => {
+        this.setState((prevState) => {
+            return {
+                toggle: !prevState.toggle
+            };
+        })
+    }
 
     render() {
         console.log('username', this.props.user)
@@ -18,19 +31,11 @@ class Header extends Component {
                     <div className='header-fade'>
                         <div className='logo'><img src='https://i.pinimg.com/originals/73/b9/12/73b91242da1257f1680e31a60ebf2da2.png' /></div>
                         <h1 className='title'><h2 className='tiny-title'>The</h2>Grimoire: <p className='small-title'>MTG Deckbuilder</p></h1>
-                        {/* <div className='login'>
-                            <div className='logged-user'>
-                                <img src={user ? user.picture : ''} />
-                                {user ? user.name : 'Please Log in!'}
-                            </div>
-                            
-                            <div className='login-buttons'>
-                                <button className='login-button' onClick={this.props.login}>Log in</button>
-                                <button className='login-button' onClick={this.props.logout}>Log out</button>
-                            </div>
-                                
-                        </div> */}
-                        <div className='nav-links'>
+                        <button className='toggle-button' onClick={this.toggler}>Menu</button>
+                        
+                    </div>
+                </header>
+                <div className={this.state.toggle ? 'nav-links' : 'hidden'}>
                             <NavLink activeClassName='active' exact to='/' >
                                 Home
                             </NavLink>
@@ -43,8 +48,6 @@ class Header extends Component {
                                 Saved Decks
                             </NavLink>
                         </div>
-                    </div>
-                </header>
             </div>
         )
     }

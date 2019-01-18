@@ -45,8 +45,6 @@ class SearchedCards extends Component {
 
         return (
             <div className='SearchedCards-component'>
-                SearchedCards
-
                 <div className='magic-cards'>
                     {magicCards}
                 </div>

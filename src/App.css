@@ -2,8 +2,8 @@ html,
 body,
 #root,
 .App, {
-  width: 100vh;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .App {
@@ -19,28 +19,25 @@ body,
 }
 
 .header-component {
-  background: black;
-  height: 200px;
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  background-image: url('https://geekandsundry.com/wp-content/uploads/2017/04/Magic-Feature.png');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position-y: -40px;
-  box-shadow: 0 5px 15px rgb(18, 18, 18);
+  /* background: black; */
+  height: 120px;
 }
 
 header {
-  background: rgba(0, 0, 0, 0.427);
   height: 100%;
   width: 100%;
   margin: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  background: black;
+  justify-content: space-around;
+  color: white;
+  background-image: url('https://geekandsundry.com/wp-content/uploads/2017/04/Magic-Feature.png');
+  /* background-attachment: fixed; */
+  background-size: cover;
+  background-position-y: -40px;
+  box-shadow: 0 5px 15px rgb(18, 18, 18);
 }
 
 .logo img {
@@ -96,12 +93,32 @@ header p {
   font-family: fantasy;
 }
 
- header a {
+.nav-links {
+  position: absolute;
+  top: 110px;
+  left:100px;
+  /* background: pink; */
+  height: 100px;
+  width: 50%;
+
+  
+}
+
+header button {
+  display: none;
+}
+
+ .nav-links a {
   margin-left: 25px;
-  color: white;
+  /* color: white; */
   text-decoration: none;
   font-size: 25px;
   text-shadow: 2px 2px 2px #000;
+  color: white;
+}
+
+.nav-links .active {
+  color: goldenrod;
 }
 
 .login {
@@ -116,9 +133,10 @@ header p {
 .logged-user {
   /* height: 80px; */
   /* background: green; */
+  position: relative;
   display: flex;
   align-items: center;
-  
+  z-index: 11;
   justify-content: flex-end;
   /* flex-direction: column; */
   margin-right: 50px;
@@ -139,13 +157,12 @@ header p {
   color: black;
   border-radius: 3px;
   border: none;
-  box-shadow: 2px 2px 2px #000;
+  /* box-shadow: 2px 2px 2px #000; */
   /* text-shadow: 1px 1px 1mpx rgb(0, 0, 0); */
 }
 
 .logged-user button:hover {
-  background: black;
-  color: goldenrod;
+  background: rgb(224, 191, 107);
   /* box-shadow: 2px 2px 2px rgb(255, 255, 255); */
 }
 
@@ -204,8 +221,16 @@ header p {
   margin: 5px;
 }
 .searchTools-component button {
+  height: 25px;
   width: 80px;
   margin: 5px;
+  background: goldenrod;
+  border: none;
+  border-radius: 3px;
+}
+.searchTools-component button:hover {
+  background: rgb(224, 191, 107);
+
 }
 .colorSelector-component {
   color: white;
@@ -220,9 +245,33 @@ header p {
   align-items: center;
   /* flex-direction: column; */
 }
-.select {
+.colorWhite-selector {
+
+}
+.colorBlue-selector {
+  color: rgb(55, 111, 255);
+}
+.colorBlack-selector {
+  color: rgb(172, 2, 172);
+} 
+.colorRed-selector {
+  color: red;
+}
+.colorGreen-selector {
+  color: green;
+}
+.colorLess-selector {
+  color: rgb(180, 179, 179);
+}
+.selectors {
   width: 100px;
+  height: 25px;
   margin: 5px;
+  background: goldenrod;
+  border: none;
+}
+.selectors:hover {
+  background: rgb(224, 191, 107);
 }
 
 /* cards searched (left side) */
@@ -232,24 +281,27 @@ header p {
   overflow-y: scroll;
 }
 
+.searchedCards-component {
+  height: 100%;
+}
+
 .save-deck-button {
   position: fixed;
-  top: 240px;
+  top: 243px;
   right: 50px;
 }
 
 .save-deck-button button {
   height: 25px;
   margin: 10px;
-  border-radius: 5px;
+  border-radius: 3px;
   background: goldenrod;
   color: black;
   border: none;
 }
 
 .save-deck-button button:hover {
-  background: black;
-  color: goldenrod;
+  background: rgb(224, 191, 107);
 }
 
 /* all the cards searched */
@@ -434,6 +486,7 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0 0 3px;
 }
 
 
@@ -448,6 +501,786 @@ header p {
   /* flex-direction: row; */
   /* width: 100%; */
   /* height: 100%; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 180px;
+  /* width:25%; */
+  position: relative;
+  /* background: pink;
+  border: solid white; */
+}
+
+/* each deck card and the button container */
+.decklist-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin: 10px;
+  
+}
+/* images of deck cards */
+.decklist-card img {
+  min-width: 93.125px;
+  min-height: 130px;
+  max-width: 93.125px;
+  max-height: 130px;
+  margin: 3px;
+}
+/* delete button on deck cards */
+.decklist-card .delete {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+
+.CreateDeck-component {
+  /* background: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  flex-direction: column;
+}
+
+.createDeck-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.createDeck-button button {
+  margin: 10px;
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.DeckImages {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 50vh;
+  width: 90%;
+  display: flex;
+  /* background: red; */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.deckImages-background {
+  background: rgba(0, 0, 0, 0.365);
+  margin: 10px;
+  height: 350px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.DeckImages-crop {
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  /* border: solid pink; */
+  background: black;
+}
+
+.DeckImages-crop:hover {
+  box-shadow: 0 0 15px rgba(81, 203, 238, 1);
+}
+
+.DeckImages input {
+  position: relative;
+  /* margin-left: 0; */
+  top: -170px;
+  right: 70px;
+  height: 20px;
+  width: 20px;
+}
+
+.DeckImages img {
+  height: 300px;
+  margin: 25px;
+}
+
+/* SAVEDDECKS-COMPONENT page */
+.saved-decks{
+  height: calc(100vh - 290px);
+  display:flex;
+  /* justify-content: center; */
+  /* background: rgba(254, 254, 254, 0.071); */
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  
+}
+
+.saved-title {
+  width: 30%;
+  /* background: red; */
+  height: 90%;
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.saved-title h1 {
+  /* background: pink; */
+  position: relative;
+  top: 100px;
+  /* right: 550px; */
+  /* left: 10px; */
+  /* width: 1350px; */
+  font-size: 50px;
+  color: goldenrod;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-family: fantasy;
+}
+
+.decks {
+  width: 30%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.392);
+  flex-wrap: wrap;
+  overflow-y: scroll; 
+  /* overflow-y: hidden; */
+}
+
+.saved-decks img {
+  height: 150px;
+  margin: 25px;
+}
+
+.user-deck {
+  margin: 10px;
+  margin-bottom: 70px;
+  height: 320px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 19, 24, 0.605);
+  flex-direction: column;
+  /* overflow: hidden; */
+  box-shadow: 12px 12px 20px 1px #333;
+  border-radius: 15px;
+}
+
+.user-deck button {
+  position: relative;
+  left: 120px;
+  bottom: 5px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  border: none;
+  padding-bottom: 3px;
+  
+}
+
+.user-deck p {
+  margin: 10px;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.deck-images {
+  background: black;
+  height: 250px;
+  width: 170px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+}
+
+.deck-images img {
+  height: 250px;
+}
+
+.userDeckCards {
+  /* margin-top: 20px; */
+  width: 70%;
+  height: 100%;
+  /* background: red; */
+  
+}
+
+.UserDeckCards-component {
+  background: rgba(255, 255, 255, 0.228);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* height: calc(50vh - 230px); */
+  height: 90%;
+  /* border: solid black; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-shadow: 0px 12px 22px 1px #333;
+  flex-wrap: wrap;
+}
+
+.deck-card-images img {
+  margin: 5px;
+  height: 250px;
+}
+
+.userDeckCards-edit-button {
+  position: absolute;
+  right: 90px;
+  
+}
+
+.userDeckCards-edit-button button{
+  position: relative;
+  top: 5px;
+  display: none;
+  
+}
+
+.active  {
+  color: goldenrod;
+
+}
+
+.auth0-lock-header-bg.auth0-lock-blur-support {
+  background: black;
+}
+
+
+/* ===========================================================================================
+===========================================================================================
+ --------------------------- Media Queries -----------------------------------------------
+===========================================================================================
+=========================================================================================== */
+
+
+@media screen and (max-width: 500px) {
+  .header-component {
+    
+  }
+  header {
+    position: relative;
+    margin: 0px;
+    background: rgb(58, 58, 58);
+    height: 100px;
+    background-image: url('https://geekandsundry.com/wp-content/uploads/2017/04/Magic-Feature.png');
+    background-size: cover;
+    z-index: 4;
+  }
+
+  .login {
+    position: relative;
+    z-index: 11;
+  }
+  .logged-user {
+    margin-right: 10px;
+    position: relative;
+    z-index: 11;
+  }
+  .logo img {
+    height: 50px;
+    display: none;
+  }
+  
+  .header-fade {
+    margin-left: 20px;
+  }
+  
+  
+  .title {
+    margin-right: 150px;
+  }
+  
+  .title h2 {
+    font-size: 10px;
+  }
+  
+  header h1 {
+    font-size: 30px;
+  }
+  
+  header p {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 20px;
+    color: rgb(193, 2, 2);
+    font-family: fantasy;
+    width: 120px;
+    /* background: black; */
+    /* display: none; */
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 120px;
+    left: -60px;
+    display: flex;
+    flex-direction: column;
+    width: 200vw;
+    padding: 20px;
+    transition: .3s;
+    z-index: 1;
+    background: black;
+  }
+
+  header button {
+    display: flex;
+    position: absolute;
+    color: black;
+    top: 75px;
+    z-index: 12;
+    background: goldenrod;
+    border-radius: 3px;
+    border: none;
+    width: 50px;
+    /* height: 25px; */
+  }
+
+  /* .hidden {
+    transform: translate(0, -400px);
+  } */
+
+  /* header ul {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    flex-direction: column;
+    width: 100vw;
+    padding: 20px;
+    transition: .3s;
+    z-index: -1;
+  } */
+  
+  .nav-links a {
+    position: relative;
+    margin-top: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    text-shadow: 2px 2px 2px #000;
+    top: 10px;
+    left: 50px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* z-index: 51; */
+    /* background: pink; */
+    
+  }
+
+  /* All pages */
+.main-components {
+  height: calc(100vh - 200px);
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  /* background: black; */
+  /* background-image: url('https://i.pinimg.com/originals/8f/85/f3/8f85f31db9a33e9655b1f23be38555f9.jpg'); */
+  background-size: cover;
+  background-position: 0 250px 0 250px;
+  /* overflow: scroll; */
+  /* z-index: -3; */
+}
+
+.routes-components {
+  width: 100%;
+  height: 90vh;
+  margin: 0px;
+  /* margin-bottom: 20px; */
+  /* z-index: -3; */
+  
+}
+
+.home-component {
+  height: calc(100vh - 200px);
+  background: rgba(254, 254, 254, 0.071);
+  width: 100%;
+  z-index: -3;
+  
+}
+
+/* DECKBUILDER page */
+/* deckbuilder component */
+.deckbuilder-component {
+  height: calc(100vh - 200px);
+  background: rgba(254, 254, 254, 0.071);
+  /* display: initial; */
+  background-image: url('../src/images/liliana-walk.jpg');
+  background-size: 2000px;
+  background-position-x: -700px; 
+  background-position-y: -55px;
+  flex-direction: column;
+  width: 100%;
+  /* top: -60px; */
+  /* position: relative; */
+}
+/* searchTools */
+.searchTools {
+  color: black;
+  position: initial;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* background: green; */
+}
+
+.searchTools-show {
+  background: rgba(22, 22, 22, 0.755);
+  width: 400px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.theTools {
+  /* background: white; */
+  top: -90px;
+  position: relative;
+}
+
+.tool input {
+  /* width: 100px; */
+  background: black;
+}
+.searchTools-component {
+  height: 700px;
+  color: goldenrod;
+  justify-content: flex-start;
+  position: absolute;
+  flex-direction: column;
+  top: 105px;
+  /* background: green; */
+}
+
+.searchTools-component .toggle-button {
+  position: relative;
+  width: 50px;
+  z-index: 11;
+  top: 28px;
+  left: 160px;
+  font-size: 10px;
+  border-radius: 3px;
+}
+
+.tool {
+  margin: 10px;
+  width: 200px;
+  height: 30px;
+  /* background: red; */
+}
+.searchTools-component button {
+  width: 80px;
+  margin: 15px;
+}
+.colorSelector-component {
+  /* color: white; */
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+.colorSelector {
+  margin: 10px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+.selectors {
+  width: 100px;
+  margin: 10px;
+}
+
+.showCards {
+  background: goldenrod;
+  width: 100px;
+  height: 28px;
+  border: none;
+  border-radius: 3px;
+  position: relative;
+  top: -32px;
+  left: 100px;
+  z-index: 11;
+}
+
+/* cards searched (left side) */
+.searchedCards-deckbuilder {
+  /* height: calc(100vh - 350px); */
+  height: 550px;
+  width: 100%;
+  overflow-y: hidden;
+  margin-top: 20px;
+  /* background: pink; */
+}
+
+/* .SearchedCards-component {
+  height: 100%;
+  background-color: orange;
+} */
+
+.save-deck-button {
+  position: fixed;
+  top: 138px;
+  right: 90px;
+}
+
+.save-deck-button button {
+  height: 25px;
+  margin: 10px;
+  border-radius: 5px;
+  background: goldenrod;
+  color: black;
+  border: none;
+}
+
+.save-deck-button button:hover {
+  background: rgb(224, 191, 107);
+}
+
+/* all the cards searched */
+.magic-cards {
+  /* display: flex; */
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  /* background: yellow; */
+  height: 500px;
+  overflow-y: scroll;
+  position: absolute;
+  top: 200px;
+  width: 90%;
+}
+/* each individual card in the search */
+.magic-card {
+  margin: 5px;
+  min-width: 93.125px;
+  min-height: 130px;
+  max-width: 93.125px;
+  max-height: 130px;
+
+}
+
+/* each individual card with multiple faces and flip */
+.flip-card {
+  /* background-color: black; */
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.magic-card-front, .magic-card-back {
+  position: absolute;
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+  backface-visibility: hidden;
+}
+.magic-card-front {
+  /* background-color: #bbb; */
+  color: black;
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+}
+.magic-card-back {
+  /* background-color: dodgerblue; */
+  /* color: white; */
+  transform: rotateY(180deg);
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+}
+
+/* container holding the selected card */
+.selectedCard-background {
+  position: absolute;
+  width: 105%;
+  height: 100%;
+  top:0;
+  margin-left: -35px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.783);
+  z-index: 50;
+}
+
+.selectedCard-container {
+  position: absolute;
+  /* background: pink; */
+  width: 375px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectedCard-imageContainer {
+  position: relative;
+  /* background: pink; */
+  margin: 15px;
+}
+
+.selectedCard-imageContainer button {
+  position: absolute;
+  right: -10px;
+}
+
+/* image of the selected card */
+.selectedCard-container img {
+  min-width: 372.5px;
+  min-height: 520px;
+  max-width: 372.5px;
+  max-height: 520px;
+  /* z-index: 50; */
+}
+/* button on the selected card that puts the card in decklist */
+.selectedCard-add {
+  /* margin: 15px; */
+  /* border: pink; */
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.selectedCard-container .cancel {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+  position: absolute;
+  margin-top: 0px;
+  margin-right: 0px;
+}
+
+.cancel button {
+  /* position: absolute; */
+  margin-top: 0;
+  /* top: 10px; */
+}
+
+.selectedCard-container h2 {
+  font-size: 50px;
+  
+}
+
+.hide {
+  display: none;
+}
+
+.hidden {
+  transform: translate(0, -500px);
+  z-index: 50;
+}
+/* deckbuilder component right side */
+.userDeck-deckbuilder {
+  top: -40px;
+  width: 100%;
+  /* height: ; */
+  background: none;
+  display: flex;
+  justify-content: center;
+  margin-left: 0px;
+  /* background: rgba(7, 7, 7, 0.187); */
+  position: relative;
+}
+/* selected card and decklist */
+.UserDeck-component {
+  width: 100%;
+  height: 500px;
+  margin: 0;
+  display:flex;
+  top: -30px;
+  /* justify-content: space-around; */
+  flex-direction: column;
+  background-image: none;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 10px 10px;
+  color: black;
+  position: relative;
+  /* background: red; */
+  
+}
+
+/* text that shows the number of cards in the cards array in state */
+.counter {
+  position: absolute;
+  margin-right: 10px;
+  left: 0vw;
+  background: black;
+  color: white;
+  width: 110px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* container of deck cards */
+.DeckList {
+  display:flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* flex-direction: row; */
+  /* width: 100%; */
+  
   overflow-y: scroll;
   overflow-x: hidden;
   flex-wrap: wrap;
@@ -587,9 +1420,9 @@ header p {
 .saved-title h1 {
   /* background: pink; */
   position: absolute;
-  top: 235px;
+  top: 150px;
   /* left: 10px; */
-  font-size: 50px;
+  font-size: 20px;
   color: goldenrod;
   text-shadow:
 		-1px -1px 0 #000,
@@ -708,13 +1541,4 @@ header p {
   
 }
 
-.active  {
-  color: goldenrod;
-
 }
-
-.auth0-lock-header-bg.auth0-lock-blur-support {
-  background: black;
-}
-
-

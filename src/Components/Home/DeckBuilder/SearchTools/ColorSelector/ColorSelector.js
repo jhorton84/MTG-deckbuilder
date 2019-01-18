@@ -16,32 +16,32 @@ function ColorSelector(props) {
             <p>Color:</p>
             <div className='colorSelector'>
                 <input type='checkbox' name='colorWhite' checked={props.colorWhite} id='color' defaultValue={true} onClick={e => props.handleCheckBox(e.target.name, 'W')}/>
-                <label for='color'>White</label>
+                <label className='colorWhite-selector' for='color'>White</label>
             </div>
             
             <div className='colorSelector'>
                 <input type='checkbox' name='colorBlue' checked={props.colorBlue} id='color' defaultValue={true} onClick={e => props.handleCheckBox(e.target.name, 'U')}/>
-                <label for='color'>Blue</label>
+                <label className='colorBlue-selector' for='color'>Blue</label>
             </div>
             
             <div className='colorSelector'>
                 <input type='checkbox' name='colorBlack' checked={props.colorBlack} id='color' defaultValue={true} onClick={e => props.handleCheckBox(e.target.name, 'B')}/>
-                <label for='color'>Black</label>
+                <label className='colorBlack-selector' for='color'>Black</label>
             </div>
             
             <div className='colorSelector'>
                 <input type='checkbox' name='colorRed' checked={props.colorRed} id='color' defaultValue={true} onClick={e => props.handleCheckBox(e.target.name, 'R')}/>
-                <label for='color'>Red</label>
+                <label className='colorRed-selector' for='color'>Red</label>
             </div>
             
             <div className='colorSelector'>
                 <input type='checkbox' name='colorGreen' checked={props.colorGreen} id='color' defaultValue={true} onClick={e => props.handleCheckBox(e.target.name, 'G')}/>
-                <label for='color'>Green</label>
+                <label className='colorGreen-selector' for='color'>Green</label>
             </div>
             
             <div className='colorSelector'>
-                <input type='checkbox' name='colorLess' checked={props.colorLess} id='color' defaultValue={true} onClick={e => props.handleCheckBox(e.target.name, 'C')}/>
-                <label for='color'>Colorless</label>
+                <input  type='checkbox' name='colorLess' checked={props.colorLess} id='color' defaultValue={true} onClick={e => props.handleCheckBox(e.target.name, 'C')}/>
+                <label className='colorLess-selector' for='color'>Colorless</label>
             </div>
             
         </div>

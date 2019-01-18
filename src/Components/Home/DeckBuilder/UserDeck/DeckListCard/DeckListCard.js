@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function DeckListCard(props) {
+    console.log('DeckListCard props', props);
     return (
         <div className='decklist-card'>
                 <img alt='' src={props.imageCard} />

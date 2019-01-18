@@ -9,8 +9,8 @@ import { updateSelectedCard, updateSelectedName, updateDeckList, updateCards } f
 
 
 class DeckBuilder extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             // cards: [],
             colorWhite: '',
@@ -18,7 +18,9 @@ class DeckBuilder extends Component {
             colorBlack: '',
             colorRed: '',
             colorGreen: '',
-            colorLess: ''
+            colorLess: '',
+            deckList: [],
+            toggle: false
         }
     }
 
@@ -53,15 +55,24 @@ class DeckBuilder extends Component {
     }
 
      //This sends the card that is selected to the deck (favorites)
-    postUserCardToTheServer = () => {
+     addCardToDeckList = () => {
+        
         const savedCard = {
             imageUrl: this.props.selectedCard,
-            name: this.props.selectedName
+            name: this.props.selectedName,
+            
         }
         axios.post('/api/gathering', savedCard).then(response => {
             console.log('postUserCardToTheServer response', response)
             this.props.updateDeckList(response.data)
         })
+        // this.state.deckList.push(savedCard);
+        // id++
+        
+        // this.setState((prevState, props) => ({
+        //     deckList:  [...prevState.deckList, {savedCard}]
+        // }))
+        // this.props.updateDeckList(this.state.deckList);
         this.cancelSelectCard();
     }
 
@@ -108,12 +119,38 @@ class DeckBuilder extends Component {
         this.props.updateSelectedCard(null);
         this.props.updateSelectedName(null);
     }
+
+    flipCard = () => {
+            document.addEventListener('DOMContentLoaded', function(event) {
+
+            document.getElementById('flip-card-btn-turn-to-back').style.visibility = 'visible';
+            document.getElementById('flip-card-btn-turn-to-front').style.visibility = 'visible';
+          
+            document.getElementById('flip-card-btn-turn-to-back').onclick = function() {
+            document.getElementById('flip-card').classList.toggle('do-flip');
+            };
+          
+            document.getElementById('flip-card-btn-turn-to-front').onclick = function() {
+            document.getElementById('flip-card').classList.toggle('do-flip');
+            };
+          
+          });
+          
+    }
     
+    toggler = () => {
+        this.setState((prevState) => {
+            return {
+                toggle: !prevState.toggle
+            };
+        })
+    }
 
     render() {
 
         return (
             <div className='deckbuilder-component'>
+                <button className='showCards' onClick={this.toggler}>Selected Cards</button>
                 <div className='searchTools' >
                     <SearchTools 
                         searchName={this.props.searchName}
@@ -130,20 +167,21 @@ class DeckBuilder extends Component {
                 </div>
 
                 <div className='save-deck-button'>
-                    Click to save Deck! --> <Link to='/createDeck/image'><button >Save Deck</button></Link>
+                     <Link to='/createDeck/image'><button >Save Deck</button></Link>
                 </div>
 
-                <div className='searchedCards-deckbuilder'>
+                <div className={this.state.toggle ? 'searchedCards-deckbuilder' : 'hide' }>
                     <SearchedCards 
                         setCard={this.setCard}
                     />
                 </div>
 
-                <div className='userDeck-deckbuilder'>
+                <div className={this.state.toggle ? 'hide' : 'userDeck-deckbuilder'}>
                     <UserDeck 
-                        postUserCardToTheServer={this.postUserCardToTheServer}
+                        // addCardToDeckList={this.addCardToDeckList}
                         updateDeckCard={this.updateDeckCard}
                         deleteDeckCard={this.deleteDeckCard}
+                        // deckList={this.state.deckList}
                     />
                 </div>
 
@@ -164,7 +202,7 @@ class DeckBuilder extends Component {
                             <img src={this.props.selectedCard} alt=''/>
                             <button className='cancel' onClick={()=>this.cancelSelectCard()}>X</button>
                         </div>
-                        <button className='selectedCard-add' onClick={()=>{this.postUserCardToTheServer()}}>Add to Deck</button>
+                        <button className='selectedCard-add' onClick={()=>{this.addCardToDeckList()}}>Add to Deck</button>
                     </div>
                 </div>
             </div>
