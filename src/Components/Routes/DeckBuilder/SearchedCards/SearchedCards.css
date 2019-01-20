@@ -1,0 +1,75 @@
+/* cards searched (left side) */
+.searchedCards-deckbuilder {
+  height: calc(100vh - 300px);
+  width: 55%;
+  overflow-y: scroll;
+}
+
+.searchedCards-component {
+  height: 100%;
+}
+
+/* all the cards searched */
+.magic-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background: yellow; */
+  height: 50px;
+}
+/* each individual card in the search */
+.magic-card {
+  margin: 5px;
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+}
+
+/* each individual card with multiple faces and flip */
+.flip-card {
+  /* background-color: black; */
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.magic-card-front, .magic-card-back {
+  position: absolute;
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+  backface-visibility: hidden;
+}
+.magic-card-front {
+  /* background-color: #bbb; */
+  color: black;
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+}
+.magic-card-back {
+  /* background-color: dodgerblue; */
+  /* color: white; */
+  transform: rotateY(180deg);
+  min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px;
+}

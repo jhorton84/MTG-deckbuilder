@@ -1,0 +1,76 @@
+.CreateDeck-component {
+  /* background: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  flex-direction: column;
+}
+
+.createDeck-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.createDeck-button button {
+  margin: 10px;
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.DeckImages {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 50vh;
+  width: 90%;
+  display: flex;
+  /* background: red; */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.deckImages-background {
+  background: rgba(0, 0, 0, 0.365);
+  margin: 10px;
+  height: 350px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.DeckImages-crop {
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  /* border: solid pink; */
+  background: black;
+}
+
+.DeckImages-crop:hover {
+  box-shadow: 0 0 15px rgba(81, 203, 238, 1);
+}
+
+.DeckImages input {
+  position: relative;
+  /* margin-left: 0; */
+  top: -170px;
+  right: 70px;
+  height: 20px;
+  width: 20px;
+}
+
+.DeckImages img {
+  height: 300px;
+  margin: 25px;
+}

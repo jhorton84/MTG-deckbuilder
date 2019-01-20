@@ -1,0 +1,6 @@
+.home-component {
+  height: calc(100vh - 350px);
+  background: rgba(254, 254, 254, 0.071);
+  width: 100%;
+  
+}

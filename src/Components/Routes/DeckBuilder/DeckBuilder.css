@@ -1,0 +1,87 @@
+/* DECKBUILDER page */
+/* deckbuilder component */
+.deckbuilder-component {
+    height: calc(100vh - 300px);
+    background: rgba(254, 254, 254, 0.071);
+    display: flex;
+    /* background-image: url('../src/images/liliana-walk.jpg'); */
+    background-size: cover;
+}
+
+
+
+/* container holding the selected card */
+.selectedCard-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    margin-left: -70px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.783);
+    z-index: 50;
+}
+  
+.selectedCard-container {
+    position: absolute;
+    /* background: pink; */
+    width: 375px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.selectedCard-imageContainer {
+    position: relative;
+    /* background: pink; */
+    margin: 15px;
+}
+  
+.selectedCard-imageContainer button {
+    position: absolute;
+    right: -10px;
+}
+  
+/* image of the selected card */
+.selectedCard-container img {
+    min-width: 372.5px;
+    min-height: 520px;
+    max-width: 372.5px;
+    max-height: 520px;
+    /* z-index: 50; */
+}
+/* button on the selected card that puts the card in decklist */
+.selectedCard-add {
+    /* margin: 15px; */
+    /* border: pink; */
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+}
+  
+.selectedCard-container .cancel {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+    position: absolute;
+    margin-top: 0px;
+    margin-right: 0px;
+}
+  
+.cancel button {
+    /* position: absolute; */
+    margin-top: 0;
+    /* top: 10px; */
+}
+  
+.selectedCard-container h2 {
+    font-size: 50px;
+    
+}

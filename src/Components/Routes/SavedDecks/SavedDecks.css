@@ -1,0 +1,116 @@
+/* SAVEDDECKS-COMPONENT page */
+.saved-decks{
+  height: calc(100vh - 290px);
+  display:flex;
+  /* justify-content: center; */
+  /* background: rgba(254, 254, 254, 0.071); */
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  
+}
+
+.saved-title {
+  width: 30%;
+  /* background: red; */
+  height: 90%;
+  /* position: absolute; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* display: none; */
+}
+
+.saved-title h1 {
+  /* background: pink; */
+  position: relative;
+  top: 100px;
+  /* right: 550px; */
+  /* left: 10px; */
+  /* width: 1350px; */
+  font-size: 50px;
+  color: goldenrod;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-family: fantasy;
+}
+
+.decks {
+  width: 30%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.392);
+  flex-wrap: wrap;
+  overflow-y: scroll; 
+  /* overflow-y: hidden; */
+}
+
+.saved-decks img {
+  height: 150px;
+  margin: 25px;
+}
+
+.user-deck {
+  margin: 10px;
+  margin-bottom: 20px;
+  height: 260px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 19, 24, 0.605);
+  flex-direction: column;
+  /* overflow: hidden; */
+  box-shadow: 12px 12px 20px 1px #333;
+  border-radius: 15px;
+}
+
+.user-deck button {
+  position: relative;
+  left: 80px;
+  bottom: 5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: black;
+  color: red;
+  border: none;
+  padding-bottom: 3px;
+  
+}
+
+.user-deck p {
+  margin: 10px;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.deck-images {
+  background: black;
+  height: 200px;
+  width: 120px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+}
+
+.deck-images img {
+  height: 200px;
+}
+
+.userDeckCards {
+  /* margin-top: 20px; */
+  width: 70%;
+  height: 100%;
+  /* background: red; */
+  
+}

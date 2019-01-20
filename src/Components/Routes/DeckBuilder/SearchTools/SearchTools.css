@@ -1,0 +1,72 @@
+/* searchTools */
+.searchTools {
+  height: 50px;
+  width: 100%;
+  color: black;
+  position: fixed;
+  top: 160px;
+}
+.searchTools-component {
+  height: 50px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+.tool {
+  margin: 5px;
+}
+.searchTools-component button {
+  height: 25px;
+  width: 80px;
+  margin: 5px;
+  background: goldenrod;
+  border: none;
+  border-radius: 3px;
+}
+.searchTools-component button:hover {
+  background: rgb(224, 191, 107);
+
+}
+.colorSelector-component {
+  color: white;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+.colorSelector {
+  margin: 10px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* flex-direction: column; */
+}
+.colorWhite-selector {
+
+}
+.colorBlue-selector {
+  color: rgb(55, 111, 255);
+}
+.colorBlack-selector {
+  color: rgb(172, 2, 172);
+} 
+.colorRed-selector {
+  color: red;
+}
+.colorGreen-selector {
+  color: green;
+}
+.colorLess-selector {
+  color: rgb(180, 179, 179);
+}
+.selectors {
+  width: 100px;
+  height: 25px;
+  margin: 5px;
+  background: goldenrod;
+  border: none;
+}
+.selectors:hover {
+  background: rgb(224, 191, 107);
+}

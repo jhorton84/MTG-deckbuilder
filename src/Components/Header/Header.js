@@ -32,10 +32,8 @@ class Header extends Component {
                         <div className='logo'><img src='https://i.pinimg.com/originals/73/b9/12/73b91242da1257f1680e31a60ebf2da2.png' /></div>
                         <h1 className='title'><h2 className='tiny-title'>The</h2>Grimoire: <p className='small-title'>MTG Deckbuilder</p></h1>
                         <button className='toggle-button' onClick={this.toggler}>Menu</button>
-                        
-                    </div>
-                </header>
-                <div className={this.state.toggle ? 'nav-links' : 'hidden'}>
+                        {/* <div className={this.state.toggle ? 'nav-links' : 'hidden'}> */}
+                        <div className={'desktop-nav ' + (this.state.toggle ? 'nav-links' : 'hidden')}>
                             <NavLink activeClassName='active' exact to='/' >
                                 Home
                             </NavLink>
@@ -48,6 +46,21 @@ class Header extends Component {
                                 Saved Decks
                             </NavLink>
                         </div>
+                    </div>
+                </header>
+                {/* <div className={this.state.toggle ? 'nav-links' : 'hidden'}>
+                            <NavLink activeClassName='active' exact to='/' >
+                                Home
+                            </NavLink>
+
+                            <NavLink activeClassName='active' exact to='/deckbuilder' >
+                                Deck Builder
+                            </NavLink>
+
+                            <NavLink activeClassName='active' exact to='/decks' >
+                                Saved Decks
+                            </NavLink>
+                </div> */}
             </div>
         )
     }

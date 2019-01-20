@@ -1,0 +1,31 @@
+.UserDeckCards-component {
+    background: rgba(255, 255, 255, 0.228);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* height: calc(50vh - 230px); */
+    height: 90%;
+    /* border: solid black; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-shadow: 0px 12px 22px 1px #333;
+    flex-wrap: wrap;
+}
+  
+.deck-card-images img {
+    margin: 5px;
+    height: 250px;
+}
+  
+.userDeckCards-edit-button {
+    position: absolute;
+    right: 90px;
+    
+}
+  
+.userDeckCards-edit-button button{
+    position: relative;
+    top: 5px;
+    display: none;
+    
+}

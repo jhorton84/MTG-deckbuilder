@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import DeckListCard from './DeckListCard/DeckListCard';
 import axios from 'axios';
 import { updateDeckList } from '../../../../ducks/reducer';
+import {Link} from 'react-router-dom';
 
 
 class UserDeck extends Component {
@@ -46,6 +47,9 @@ class UserDeck extends Component {
                 </div> */}
                 <div className='counter'>
                     Deck: {myDeck.length}/60
+                </div>
+                <div className='save-deck-button'>
+                     <Link to='/createDeck/image'><button >Save Deck</button></Link>
                 </div>
                 <div className={myDeck.length? 'DeckList' : 'hide'}>
                     

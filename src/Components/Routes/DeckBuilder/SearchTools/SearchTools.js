@@ -11,25 +11,26 @@ class SearchTools extends Component {
     constructor() {
         super();
         this.state = {
-            toggle: false
+            // toggle: false
         }
     }
     
-    toggler = () => {
-        this.setState((prevState) => {
-            return {
-                toggle: !prevState.toggle
-            };
-        })
-    }
+    // toggler = () => {
+    //     this.setState((prevState) => {
+    //         return {
+    //             toggle: !prevState.toggle
+    //         };
+    //     })
+    // }
 
     render() {
         return (
             <div className='searchTools-component'>
                 {/* SearchTools */}
-                <button className='toggle-button' onClick={this.toggler}>Search</button>
-                <div className={this.state.toggle ? 'searchTools-show' : 'hide'}>
-                    <div className='theTools'>
+                {/* <button className='toggle-button' onClick={this.toggler}>Search</button> */}
+                {/* <div className={this.state.toggle ? 'searchTools-show' : 'hide'}> */}
+                {/* <div className='searchTools-show'>
+                    <div className='theTools'> */}
                         <input className='tool' onChange={e=>this.props.updateSearchName(e.target.value)} placeholder='Search for Card Name' />
                         <input className='tool' onChange={e=>this.props.updateSearchText(e.target.value)} placeholder='Search for Card Text' />
                         <ColorSelector
@@ -47,8 +48,8 @@ class SearchTools extends Component {
                         
                         <SetSelector/>
                         <button onClick={()=>this.props.searchCards()}>Search</button>
-                    </div>
-                </div>
+                    {/* </div>
+                </div> */}
             </div>
         )
     }

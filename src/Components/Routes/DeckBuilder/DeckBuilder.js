@@ -3,7 +3,6 @@ import SearchTools from './SearchTools/SearchTools';
 import SearchedCards from './SearchedCards/SearchedCards';
 import UserDeck from './UserDeck/UserDeck';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updateSelectedCard, updateSelectedName, updateDeckList, updateCards } from '../../../ducks/reducer';
 
@@ -20,7 +19,7 @@ class DeckBuilder extends Component {
             colorGreen: '',
             colorLess: '',
             deckList: [],
-            toggle: false
+            // toggle: false
         }
     }
 
@@ -138,19 +137,19 @@ class DeckBuilder extends Component {
           
     }
     
-    toggler = () => {
-        this.setState((prevState) => {
-            return {
-                toggle: !prevState.toggle
-            };
-        })
-    }
+    // toggler = () => {
+    //     this.setState((prevState) => {
+    //         return {
+    //             toggle: !prevState.toggle
+    //         };
+    //     })
+    // }
 
     render() {
 
         return (
             <div className='deckbuilder-component'>
-                <button className='showCards' onClick={this.toggler}>Selected Cards</button>
+                {/* <button className='showCards' onClick={this.toggler}>Selected Cards</button> */}
                 <div className='searchTools' >
                     <SearchTools 
                         searchName={this.props.searchName}
@@ -166,17 +165,17 @@ class DeckBuilder extends Component {
                     />
                 </div>
 
-                <div className='save-deck-button'>
-                     <Link to='/createDeck/image'><button >Save Deck</button></Link>
-                </div>
+               
 
-                <div className={this.state.toggle ? 'searchedCards-deckbuilder' : 'hide' }>
+                {/* <div className={this.state.toggle ? 'searchedCards-deckbuilder' : 'hide' }> */}
+                <div className='searchedCards-deckbuilder'>
                     <SearchedCards 
                         setCard={this.setCard}
                     />
                 </div>
 
-                <div className={this.state.toggle ? 'hide' : 'userDeck-deckbuilder'}>
+                {/* <div className={this.state.toggle ? 'hide' : 'userDeck-deckbuilder'}> */}
+                <div className='userDeck-deckbuilder'>
                     <UserDeck 
                         // addCardToDeckList={this.addCardToDeckList}
                         updateDeckCard={this.updateDeckCard}

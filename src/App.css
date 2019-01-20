@@ -12,14 +12,10 @@ body,
   color: white;
   height: 100vh;
   width: 100vw;
-  /* background-attachment: fixed; */
-  /* background-position: 250px 0px ; */
-  /* margin: 0 auto; */
   position: fixed;
 }
 
 .header-component {
-  /* background: black; */
   height: 120px;
 }
 
@@ -34,7 +30,6 @@ header {
   justify-content: space-around;
   color: white;
   background-image: url('https://geekandsundry.com/wp-content/uploads/2017/04/Magic-Feature.png');
-  /* background-attachment: fixed; */
   background-size: cover;
   background-position-y: -40px;
   box-shadow: 0 5px 15px rgb(18, 18, 18);
@@ -46,8 +41,6 @@ header {
 }
 
 .header-fade {
-  /* background: white; */
-  /* width: 150vw; */
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -94,14 +87,30 @@ header p {
 }
 
 .nav-links {
-  position: absolute;
-  top: 110px;
+  /* position: absolute; */
   left:100px;
-  /* background: pink; */
-  height: 100px;
   width: 50%;
+  color: white;
+  margin-left: 100px;
+  height: 50px;
+}
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 400px;
+  color: white;
+  margin-left: 100px;
+  height: 50px;
+}
 
-  
+.desktop-nav a {
+  margin: 5px;
+  text-decoration: none;
+}
+
+header a {
+  color: white;
 }
 
 header button {
@@ -168,7 +177,7 @@ header button {
 
 /* All pages */
 .main-components {
-  height: calc(100vh - 300px);
+  height: calc(100vh - 250px);
   display: flex;
   justify-content: center;
   margin: 50px;
@@ -182,590 +191,13 @@ header button {
   width: 100%;
   height: 90vh;
   margin: 20px;
+  display: flex;
+  /* align-items: center; */
   /* margin-bottom: 20px; */
-}
-
-.home-component {
-  height: calc(100vh - 350px);
-  background: rgba(254, 254, 254, 0.071);
-  width: 100%;
-  
-}
-
-/* DECKBUILDER page */
-/* deckbuilder component */
-.deckbuilder-component {
-  height: calc(100vh - 350px);
-  background: rgba(254, 254, 254, 0.071);
-  display: flex;
-  /* background-image: url('../src/images/liliana-walk.jpg'); */
-  background-size: cover;
-}
-/* searchTools */
-.searchTools {
-  height: 50px;
-  width: 100%;
-  color: black;
-  position: fixed;
-  top: 240px;
-}
-.searchTools-component {
-  height: 50px;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-}
-.tool {
-  margin: 5px;
-}
-.searchTools-component button {
-  height: 25px;
-  width: 80px;
-  margin: 5px;
-  background: goldenrod;
-  border: none;
-  border-radius: 3px;
-}
-.searchTools-component button:hover {
-  background: rgb(224, 191, 107);
-
-}
-.colorSelector-component {
-  color: white;
-  margin: 5px;
-  display: flex;
-  align-items: center;
-}
-.colorSelector {
-  margin: 10px;
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  /* flex-direction: column; */
-}
-.colorWhite-selector {
-
-}
-.colorBlue-selector {
-  color: rgb(55, 111, 255);
-}
-.colorBlack-selector {
-  color: rgb(172, 2, 172);
-} 
-.colorRed-selector {
-  color: red;
-}
-.colorGreen-selector {
-  color: green;
-}
-.colorLess-selector {
-  color: rgb(180, 179, 179);
-}
-.selectors {
-  width: 100px;
-  height: 25px;
-  margin: 5px;
-  background: goldenrod;
-  border: none;
-}
-.selectors:hover {
-  background: rgb(224, 191, 107);
-}
-
-/* cards searched (left side) */
-.searchedCards-deckbuilder {
-  height: calc(100vh - 350px);
-  width: 55%;
-  overflow-y: scroll;
-}
-
-.searchedCards-component {
-  height: 100%;
-}
-
-.save-deck-button {
-  position: fixed;
-  top: 243px;
-  right: 50px;
-}
-
-.save-deck-button button {
-  height: 25px;
-  margin: 10px;
-  border-radius: 3px;
-  background: goldenrod;
-  color: black;
-  border: none;
-}
-
-.save-deck-button button:hover {
-  background: rgb(224, 191, 107);
-}
-
-/* all the cards searched */
-.magic-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* background: yellow; */
-  height: 50px;
-}
-/* each individual card in the search */
-.magic-card {
-  margin: 5px;
-  min-width: 186.25px;
-  min-height: 260px;
-  max-width: 186.25px;
-  max-height: 260px;
-}
-
-/* each individual card with multiple faces and flip */
-.flip-card {
-  /* background-color: black; */
-  min-width: 186.25px;
-  min-height: 260px;
-  max-width: 186.25px;
-  max-height: 260px;
-  /* border: 1px solid #f1f1f1; */
-  perspective: 1000px;
-}
-.flip-card-inner {
-  position: relative;
-  min-width: 186.25px;
-  min-height: 260px;
-  max-width: 186.25px;
-  max-height: 260px;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-.magic-card-front, .magic-card-back {
-  position: absolute;
-  min-width: 186.25px;
-  min-height: 260px;
-  max-width: 186.25px;
-  max-height: 260px;
-  backface-visibility: hidden;
-}
-.magic-card-front {
-  /* background-color: #bbb; */
-  color: black;
-  min-width: 186.25px;
-  min-height: 260px;
-  max-width: 186.25px;
-  max-height: 260px;
-}
-.magic-card-back {
-  /* background-color: dodgerblue; */
-  /* color: white; */
-  transform: rotateY(180deg);
-  min-width: 186.25px;
-  min-height: 260px;
-  max-width: 186.25px;
-  max-height: 260px;
-}
-
-/* container holding the selected card */
-.selectedCard-background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top:0;
-  margin-left: -70px;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.783);
-  z-index: 50;
-}
-
-.selectedCard-container {
-  position: absolute;
-  /* background: pink; */
-  width: 375px;
-  height: 1000px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.selectedCard-imageContainer {
-  position: relative;
-  /* background: pink; */
-  margin: 15px;
-}
-
-.selectedCard-imageContainer button {
-  position: absolute;
-  right: -10px;
-}
-
-/* image of the selected card */
-.selectedCard-container img {
-  min-width: 372.5px;
-  min-height: 520px;
-  max-width: 372.5px;
-  max-height: 520px;
-  /* z-index: 50; */
-}
-/* button on the selected card that puts the card in decklist */
-.selectedCard-add {
-  /* margin: 15px; */
-  /* border: pink; */
-  height: 40px;
-  width: 100px;
-  border-radius: 10px;
-}
-
-.selectedCard-container .cancel {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  color: white;
-  background-color: black;
-  position: absolute;
-  margin-top: 0px;
-  margin-right: 0px;
-}
-
-.cancel button {
-  /* position: absolute; */
-  margin-top: 0;
-  /* top: 10px; */
-}
-
-.selectedCard-container h2 {
-  font-size: 50px;
-  
 }
 
 .hide {
   display: none;
-}
-/* deckbuilder component right side */
-.userDeck-deckbuilder {
-  width: 40vw;
-  /* background: yellow; */
-  display: flex;
-  justify-content: center;
-  margin-left: 20px;
-  background: rgba(7, 7, 7, 0.187);
-}
-/* selected card and decklist */
-.UserDeck-component {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  display:flex;
-  /* justify-content: space-around; */
-  flex-direction: column;
-  background-image: url('http://i.imgur.com/590xacb.png');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: 10px 10px;
-  color: black;
-  position: relative;
-  /* background: black; */
-}
-
-/* text that shows the number of cards in the cards array in state */
-.counter {
-  position: absolute;
-  margin-right: 10px;
-  left: 0vw;
-  background: black;
-  color: white;
-  width: 110px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0 0 3px;
-}
-
-
-
-/* container of deck cards */
-.DeckList {
-  display:flex;
-  justify-content: center;
-  margin-top: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  /* flex-direction: row; */
-  /* width: 100%; */
-  /* height: 100%; */
-  overflow-y: scroll;
-  overflow-x: hidden;
-  flex-wrap: wrap;
-}
-
-.card {
-  height: 180px;
-  /* width:25%; */
-  position: relative;
-  /* background: pink;
-  border: solid white; */
-}
-
-/* each deck card and the button container */
-.decklist-card {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  margin: 10px;
-  
-}
-/* images of deck cards */
-.decklist-card img {
-  min-width: 93.125px;
-  min-height: 130px;
-  max-width: 93.125px;
-  max-height: 130px;
-  margin: 3px;
-}
-/* delete button on deck cards */
-.decklist-card .delete {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  color: white;
-  background-color: black;
-  position: absolute;
-  top: -8px;
-  right: -8px;
-}
-
-.CreateDeck-component {
-  /* background: white; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-  flex-direction: column;
-}
-
-.createDeck-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
-.createDeck-button button {
-  margin: 10px;
-  height: 30px;
-  width: 100px;
-  border-radius: 5px;
-}
-
-.DeckImages {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 50vh;
-  width: 90%;
-  display: flex;
-  /* background: red; */
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.deckImages-background {
-  background: rgba(0, 0, 0, 0.365);
-  margin: 10px;
-  height: 350px;
-  width: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  position: relative;
-}
-
-.DeckImages-crop {
-  width: 200px;
-  height: 300px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  /* border: solid pink; */
-  background: black;
-}
-
-.DeckImages-crop:hover {
-  box-shadow: 0 0 15px rgba(81, 203, 238, 1);
-}
-
-.DeckImages input {
-  position: relative;
-  /* margin-left: 0; */
-  top: -170px;
-  right: 70px;
-  height: 20px;
-  width: 20px;
-}
-
-.DeckImages img {
-  height: 300px;
-  margin: 25px;
-}
-
-/* SAVEDDECKS-COMPONENT page */
-.saved-decks{
-  height: calc(100vh - 290px);
-  display:flex;
-  /* justify-content: center; */
-  /* background: rgba(254, 254, 254, 0.071); */
-  flex-direction: column;
-  flex-wrap: wrap;
-  /* align-items: center; */
-  
-}
-
-.saved-title {
-  width: 30%;
-  /* background: red; */
-  height: 90%;
-  position: absolute;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.saved-title h1 {
-  /* background: pink; */
-  position: relative;
-  top: 100px;
-  /* right: 550px; */
-  /* left: 10px; */
-  /* width: 1350px; */
-  font-size: 50px;
-  color: goldenrod;
-  text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-    1px 1px 0 #000;
-  font-family: fantasy;
-}
-
-.decks {
-  width: 30%;
-  height: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.392);
-  flex-wrap: wrap;
-  overflow-y: scroll; 
-  /* overflow-y: hidden; */
-}
-
-.saved-decks img {
-  height: 150px;
-  margin: 25px;
-}
-
-.user-deck {
-  margin: 10px;
-  margin-bottom: 70px;
-  height: 320px;
-  width: 250px;
-  display: flex;
-  align-items: center;
-  background: rgba(0, 19, 24, 0.605);
-  flex-direction: column;
-  /* overflow: hidden; */
-  box-shadow: 12px 12px 20px 1px #333;
-  border-radius: 15px;
-}
-
-.user-deck button {
-  position: relative;
-  left: 120px;
-  bottom: 5px;
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  background: black;
-  color: white;
-  border: none;
-  padding-bottom: 3px;
-  
-}
-
-.user-deck p {
-  margin: 10px;
-  text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
-}
-
-.deck-images {
-  background: black;
-  height: 250px;
-  width: 170px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10%;
-}
-
-.deck-images img {
-  height: 250px;
-}
-
-.userDeckCards {
-  /* margin-top: 20px; */
-  width: 70%;
-  height: 100%;
-  /* background: red; */
-  
-}
-
-.UserDeckCards-component {
-  background: rgba(255, 255, 255, 0.228);
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  /* height: calc(50vh - 230px); */
-  height: 90%;
-  /* border: solid black; */
-  overflow-y: scroll;
-  overflow-x: hidden;
-  box-shadow: 0px 12px 22px 1px #333;
-  flex-wrap: wrap;
-}
-
-.deck-card-images img {
-  margin: 5px;
-  height: 250px;
-}
-
-.userDeckCards-edit-button {
-  position: absolute;
-  right: 90px;
-  
-}
-
-.userDeckCards-edit-button button{
-  position: relative;
-  top: 5px;
-  display: none;
-  
 }
 
 .active  {
@@ -841,7 +273,7 @@ header button {
     /* display: none; */
   }
 
-  .nav-links {
+  /* .nav-links {
     position: fixed;
     top: 120px;
     left: -60px;
@@ -852,7 +284,8 @@ header button {
     transition: .3s;
     z-index: 1;
     background: black;
-  }
+    background: pink;
+  } */
 
   header button {
     display: flex;
@@ -867,9 +300,6 @@ header button {
     /* height: 25px; */
   }
 
-  /* .hidden {
-    transform: translate(0, -400px);
-  } */
 
   /* header ul {
     position: fixed;

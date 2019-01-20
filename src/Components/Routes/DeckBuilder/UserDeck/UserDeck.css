@@ -1,0 +1,112 @@
+/* deckbuilder component right side */
+.userDeck-deckbuilder {
+  width: 40vw;
+  /* background: yellow; */
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+  background: rgba(7, 7, 7, 0.187);
+}
+/* selected card and decklist */
+.UserDeck-component {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display:flex;
+  /* justify-content: space-around; */
+  flex-direction: column;
+  background-image: url('http://i.imgur.com/590xacb.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 10px 10px;
+  color: black;
+  position: relative;
+  /* background: black; */
+}
+
+/* text that shows the number of cards in the cards array in state */
+.counter {
+  position: absolute;
+  margin-right: 10px;
+  left: 0vw;
+  background: black;
+  color: white;
+  width: 110px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 3px;
+}
+
+.save-deck-button {
+  position: absolute;
+  /* top: 220px; */
+  right: 10px;
+  z-index: 11;
+}
+
+.save-deck-button button {
+  height: 25px;
+  margin-top: 3px;
+  border-radius: 3px;
+  background: goldenrod;
+  color: black;
+  border: none;
+}
+
+.save-deck-button button:hover {
+  background: rgb(224, 191, 107);
+}
+
+/* container of deck cards */
+.DeckList {
+  display:flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* flex-direction: row; */
+  /* width: 100%; */
+  /* height: 100%; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 180px;
+  /* width:25%; */
+  position: relative;
+  /* background: pink;
+  border: solid white; */
+}
+
+/* each deck card and the button container */
+.decklist-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin: 10px;
+  
+}
+/* images of deck cards */
+.decklist-card img {
+  min-width: 93.125px;
+  min-height: 130px;
+  max-width: 93.125px;
+  max-height: 130px;
+  margin: 3px;
+}
+/* delete button on deck cards */
+.decklist-card .delete {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}

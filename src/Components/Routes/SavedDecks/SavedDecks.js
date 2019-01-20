@@ -47,7 +47,7 @@ class SavedDecks extends Component {
         const userDecks = this.props.decks.map(deck => {
         return (
             <div className={this.props.user ? 'user-deck' : 'hide'}>
-                <button onClick={()=> {this.deleteDeck(deck.id)}} >x</button>
+                <button onClick={()=> {this.deleteDeck(deck.id)}} >Del</button>
                 <div className='deck-images'>
                     <img src={deck.deckimage} onClick={()=> {this.getUserDeckCards(deck.id)}}  />
                 </div>
@@ -58,9 +58,9 @@ class SavedDecks extends Component {
         return (
             <div className='saved-decks'>
                 <div className='decks'>
-                <div className='saved-title'>
+                {/* <div className='saved-title'>
                     <h1>Saved Decks</h1>
-                </div>
+                </div> */}
                     {userDecks}
                 </div>
                 <div className='userDeckCards'>
