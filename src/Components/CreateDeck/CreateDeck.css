@@ -29,8 +29,10 @@
   width: 90%;
   display: flex;
   /* background: red; */
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  
 }
 
 .deckImages-background {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import './Components/CreateDeck/CreateDeck.css';
 import './Components/Header/Header.css';
 import './Components/Routes/DeckBuilder/DeckBuilder.css';
 import './Components/Routes/DeckBuilder/SearchedCards/SearchedCards.css';
@@ -9,6 +8,7 @@ import './Components/Routes/Home/Home.css';
 import './Components/Routes/DeckBuilder/UserDeck/UserDeck.css';
 import './Components/Routes/SavedDecks/UserDeckCards/UserDeckCards.css';
 import './Components/Routes/SavedDecks/SavedDecks.css';
+import './Components/CreateDeck/CreateDeck.css';
 import './reset.css';
 import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
