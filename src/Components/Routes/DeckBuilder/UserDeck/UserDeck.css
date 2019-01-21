@@ -110,3 +110,7 @@
   top: -8px;
   right: -8px;
 }
+
+@media screen and (max-width: 500px) {
+  
+}

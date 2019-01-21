@@ -4,7 +4,7 @@
   width: 100%;
   color: black;
   position: fixed;
-  top: 160px;
+  top: 24vh;
 }
 .searchTools-component {
   height: 50px;
@@ -69,4 +69,85 @@
 }
 .selectors:hover {
   background: rgb(224, 191, 107);
+}
+
+@media screen and (max-width: 500px) {
+  /* searchTools */
+.searchTools {
+  color: black;
+  position: initial;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* background: green; */
+}
+
+.searchTools-show {
+  background: rgba(22, 22, 22, 0.755);
+  width: 400px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.theTools {
+  /* background: white; */
+  top: -90px;
+  position: relative;
+}
+
+.tool input {
+  /* width: 100px; */
+  background: black;
+}
+.searchTools-component {
+  height: 700px;
+  color: goldenrod;
+  justify-content: flex-start;
+  position: absolute;
+  flex-direction: column;
+  top: 105px;
+  /* background: green; */
+}
+
+.searchTools-component .toggle-button {
+  position: relative;
+  width: 50px;
+  z-index: 11;
+  top: 28px;
+  left: 160px;
+  font-size: 10px;
+  border-radius: 3px;
+}
+
+.tool {
+  margin: 10px;
+  width: 200px;
+  height: 30px;
+  /* background: red; */
+}
+.searchTools-component button {
+  width: 80px;
+  margin: 15px;
+}
+.colorSelector-component {
+  /* color: white; */
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+.colorSelector {
+  margin: 10px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+.selectors {
+  width: 100px;
+  margin: 10px;
+}
 }

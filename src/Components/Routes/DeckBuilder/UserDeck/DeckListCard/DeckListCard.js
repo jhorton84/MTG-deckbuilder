@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
+import { updateSelectedCard } from '../../../../../ducks/reducer';
 
-export default function DeckListCard(props) {
+function DeckListCard(props) {
     console.log('DeckListCard props', props);
     return (
         <div className='decklist-card'>
-                <img alt='' src={props.imageCard} />
+                <img alt='' src={props.imageCard} onClick={()=>{props.udpateSelectedCard(props.imageCard)}} />
                 {/* <button onClick={()=> props.updateDeckCard(props.id)} >Update</button> */}
                 <button className='delete' onClick={()=> props.deleteDeckCard(props.id)} >X</button>
                 {/* <img alt='' src={card.imageUrl} />
@@ -13,3 +15,13 @@ export default function DeckListCard(props) {
         </div>
     )
 }
+
+const mapStateToProps = state => {
+
+}
+
+const mapDispatchToProps = {
+    udpateSelectedCard: updateSelectedCard
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DeckListCard);

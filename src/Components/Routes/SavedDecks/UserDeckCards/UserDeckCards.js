@@ -16,7 +16,7 @@ class UserDeckCards extends Component {
             console.log('cards from the deck', card)
             return (
                 <div className={this.props.user ? 'deck-card-images' : 'hide'}>
-                    <img src={card.imageurl} />
+                    <img src={card.imageurl} onClick />
                 </div>
             )
         })

@@ -1,20 +1,42 @@
+.userDeckCards {
+    /* margin-left: 15px; */
+    width: 70%;
+    height: 100%;
+    display: flex;
+    /* background: red; */
+    
+  }
+
 .UserDeckCards-component {
     background: rgba(255, 255, 255, 0.228);
     display: flex;
     justify-content: center;
-    width: 100%;
-    /* height: calc(50vh - 230px); */
-    height: 90%;
+    align-items:flex-start;
+    width: 100vw;
+    /* height: 100%; */
     /* border: solid black; */
     overflow-y: scroll;
     overflow-x: hidden;
     box-shadow: 0px 12px 22px 1px #333;
     flex-wrap: wrap;
+    margin-left: 0;
+    margin-top: 0;
+    
+}
+
+.deck-card-images {
+    /* height: 250px; */
+    /* background: yellow; */
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
   
 .deck-card-images img {
-    margin: 5px;
-    height: 250px;
+    margin: 15px;
+    height: 170px;
+    margin-top: 0;
 }
   
 .userDeckCards-edit-button {
@@ -28,4 +50,8 @@
     top: 5px;
     display: none;
     
+}
+
+@media screen and (max-width: 500px) {
+
 }

@@ -15,169 +15,11 @@ body,
   position: fixed;
 }
 
-.header-component {
-  height: 120px;
-}
 
-header {
-  height: 100%;
-  width: 100%;
-  margin: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: black;
-  justify-content: space-around;
-  color: white;
-  background-image: url('https://geekandsundry.com/wp-content/uploads/2017/04/Magic-Feature.png');
-  background-size: cover;
-  background-position-y: -40px;
-  box-shadow: 0 5px 15px rgb(18, 18, 18);
-}
-
-.logo img {
-  height: 150px;
-  transform: rotate(-5deg);
-}
-
-.header-fade {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 50px;
-  margin-left: 50px;
-
-}
-
-
-.title {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  text-shadow: 2px 2px 2px #000;
-  /* background: green; */
-}
-
-.title h2 {
-  font-size: 20px;
-  margin: 5px;
-  margin-bottom: 15px;
-  color: rgb(193, 2, 2);
-  font-family: fantasy;
-}
-
-.small-title {
-  margin-bottom: 15px;
-}
-
-header h1 {
-  color: goldenrod;
-  font-size: 50px;
-  font-family: fantasy;
-  /* margin-bottom: 0; */
-}
-
-header p {
-  font-size: 30px;
-  margin-left: 10px;
-  margin-top: 20px;
-  color: rgb(193, 2, 2);
-  font-family: fantasy;
-}
-
-.nav-links {
-  /* position: absolute; */
-  left:100px;
-  width: 50%;
-  color: white;
-  margin-left: 100px;
-  height: 50px;
-}
-.desktop-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 400px;
-  color: white;
-  margin-left: 100px;
-  height: 50px;
-}
-
-.desktop-nav a {
-  margin: 5px;
-  text-decoration: none;
-}
-
-header a {
-  color: white;
-}
-
-header button {
-  display: none;
-}
-
- .nav-links a {
-  margin-left: 25px;
-  /* color: white; */
-  text-decoration: none;
-  font-size: 25px;
-  text-shadow: 2px 2px 2px #000;
-  color: white;
-}
-
-.nav-links .active {
-  color: goldenrod;
-}
-
-.login {
-  /* height: 150px; */
-  background: rgb(196, 196, 196);
-  display: flex;
-  /* width: 20vw; */
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.logged-user {
-  /* height: 80px; */
-  /* background: green; */
-  position: relative;
-  display: flex;
-  align-items: center;
-  z-index: 11;
-  justify-content: flex-end;
-  /* flex-direction: column; */
-  margin-right: 50px;
-  
-  /* font-size: 20px; */
-}
-
-.logged-user img {
-  height: 30px;
-  border-radius: 50%;
-  margin: 5px;
-  box-shadow: 2px 2px 2px rgb(16, 16, 16);
-}
-
-.logged-user button {
-  margin: 5px;
-  background: goldenrod;
-  color: black;
-  border-radius: 3px;
-  border: none;
-  /* box-shadow: 2px 2px 2px #000; */
-  /* text-shadow: 1px 1px 1mpx rgb(0, 0, 0); */
-}
-
-.logged-user button:hover {
-  background: rgb(224, 191, 107);
-  /* box-shadow: 2px 2px 2px rgb(255, 255, 255); */
-}
 
 /* All pages */
 .main-components {
-  height: calc(100vh - 250px);
+  height: calc(100vh - 30vh);
   display: flex;
   justify-content: center;
   margin: 50px;
@@ -189,10 +31,11 @@ header button {
 
 .routes-components {
   width: 100%;
-  height: 90vh;
+  /* height: 90vh; */
   margin: 20px;
-  display: flex;
+  /* display: flex; */
   /* align-items: center; */
+  justify-content: center;
   /* margin-bottom: 20px; */
 }
 
@@ -218,117 +61,6 @@ header button {
 
 
 @media screen and (max-width: 500px) {
-  .header-component {
-    
-  }
-  header {
-    position: relative;
-    margin: 0px;
-    background: rgb(58, 58, 58);
-    height: 100px;
-    background-image: url('https://geekandsundry.com/wp-content/uploads/2017/04/Magic-Feature.png');
-    background-size: cover;
-    z-index: 4;
-  }
-
-  .login {
-    position: relative;
-    z-index: 11;
-  }
-  .logged-user {
-    margin-right: 10px;
-    position: relative;
-    z-index: 11;
-  }
-  .logo img {
-    height: 50px;
-    display: none;
-  }
-  
-  .header-fade {
-    margin-left: 20px;
-  }
-  
-  
-  .title {
-    margin-right: 150px;
-  }
-  
-  .title h2 {
-    font-size: 10px;
-  }
-  
-  header h1 {
-    font-size: 30px;
-  }
-  
-  header p {
-    font-size: 15px;
-    margin-left: 10px;
-    margin-top: 20px;
-    color: rgb(193, 2, 2);
-    font-family: fantasy;
-    width: 120px;
-    /* background: black; */
-    /* display: none; */
-  }
-
-  /* .nav-links {
-    position: fixed;
-    top: 120px;
-    left: -60px;
-    display: flex;
-    flex-direction: column;
-    width: 200vw;
-    padding: 20px;
-    transition: .3s;
-    z-index: 1;
-    background: black;
-    background: pink;
-  } */
-
-  header button {
-    display: flex;
-    position: absolute;
-    color: black;
-    top: 75px;
-    z-index: 12;
-    background: goldenrod;
-    border-radius: 3px;
-    border: none;
-    width: 50px;
-    /* height: 25px; */
-  }
-
-
-  /* header ul {
-    position: fixed;
-    top: 90px;
-    left: 0;
-    flex-direction: column;
-    width: 100vw;
-    padding: 20px;
-    transition: .3s;
-    z-index: -1;
-  } */
-  
-  .nav-links a {
-    position: relative;
-    margin-top: 5px;
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    text-shadow: 2px 2px 2px #000;
-    top: 10px;
-    left: 50px;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    /* z-index: 51; */
-    /* background: pink; */
-    
-  }
-
   /* All pages */
 .main-components {
   height: calc(100vh - 200px);
@@ -344,115 +76,14 @@ header button {
 }
 
 .routes-components {
-  width: 100%;
+  width: 90%;
   height: 90vh;
-  margin: 0px;
+  margin: 10px;
   /* margin-bottom: 20px; */
   /* z-index: -3; */
   
 }
 
-.home-component {
-  height: calc(100vh - 200px);
-  background: rgba(254, 254, 254, 0.071);
-  width: 100%;
-  z-index: -3;
-  
-}
-
-/* DECKBUILDER page */
-/* deckbuilder component */
-.deckbuilder-component {
-  height: calc(100vh - 200px);
-  background: rgba(254, 254, 254, 0.071);
-  /* display: initial; */
-  background-image: url('../src/images/liliana-walk.jpg');
-  background-size: 2000px;
-  background-position-x: -700px; 
-  background-position-y: -55px;
-  flex-direction: column;
-  width: 100%;
-  /* top: -60px; */
-  /* position: relative; */
-}
-/* searchTools */
-.searchTools {
-  color: black;
-  position: initial;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  /* background: green; */
-}
-
-.searchTools-show {
-  background: rgba(22, 22, 22, 0.755);
-  width: 400px;
-  height: 550px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.theTools {
-  /* background: white; */
-  top: -90px;
-  position: relative;
-}
-
-.tool input {
-  /* width: 100px; */
-  background: black;
-}
-.searchTools-component {
-  height: 700px;
-  color: goldenrod;
-  justify-content: flex-start;
-  position: absolute;
-  flex-direction: column;
-  top: 105px;
-  /* background: green; */
-}
-
-.searchTools-component .toggle-button {
-  position: relative;
-  width: 50px;
-  z-index: 11;
-  top: 28px;
-  left: 160px;
-  font-size: 10px;
-  border-radius: 3px;
-}
-
-.tool {
-  margin: 10px;
-  width: 200px;
-  height: 30px;
-  /* background: red; */
-}
-.searchTools-component button {
-  width: 80px;
-  margin: 15px;
-}
-.colorSelector-component {
-  /* color: white; */
-  margin: 10px;
-  display: flex;
-  align-items: center;
-}
-.colorSelector {
-  margin: 10px;
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  flex-direction: column;
-}
-.selectors {
-  width: 100px;
-  margin: 10px;
-}
 
 .showCards {
   background: goldenrod;
@@ -942,22 +573,21 @@ header button {
 }
 
 .UserDeckCards-component {
-  background: rgba(255, 255, 255, 0.228);
+  /* background: rgba(255, 255, 255, 0.228);
   display: flex;
   justify-content: center;
   width: 100%;
   height: calc(50vh - 230px);
-  /* border: solid black; */
   overflow-y: scroll;
   overflow-x: hidden;
   box-shadow: 0px 12px 22px 1px #333;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 }
 
-.deck-card-images img {
+/* .deck-card-images img {
   margin: 5px;
   height: 250px;
-}
+} */
 
 .userDeckCards-edit-button {
   position: absolute;

@@ -1,11 +1,13 @@
 /* DECKBUILDER page */
 /* deckbuilder component */
 .deckbuilder-component {
-    height: calc(100vh - 300px);
+    height: calc(100vh - 34vh);
     background: rgba(254, 254, 254, 0.071);
     display: flex;
     /* background-image: url('../src/images/liliana-walk.jpg'); */
     background-size: cover;
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
 
@@ -17,6 +19,7 @@
     height: 100%;
     top:0;
     margin-left: -70px;
+    /* margin-right: 90px; */
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -26,7 +29,7 @@
 }
   
 .selectedCard-container {
-    position: absolute;
+    position: relative;
     /* background: pink; */
     width: 375px;
     height: 1000px;
@@ -84,4 +87,22 @@
 .selectedCard-container h2 {
     font-size: 50px;
     
+}
+
+@media screen and (max-width: 500px) {
+    /* DECKBUILDER page */
+/* deckbuilder component */
+    .deckbuilder-component {
+        height: calc(100vh - 200px);
+        background: rgba(254, 254, 254, 0.071);
+        /* display: initial; */
+        background-image: url('../../../images/liliana-walk.jpg');
+        background-size: 2000px;
+        background-position-x: -700px; 
+        background-position-y: -55px;
+        flex-direction: column;
+        width: 100%;
+        /* top: -60px; */
+        /* position: relative; */
+    }
 }

@@ -76,4 +76,5 @@ const mapDispatchToProps = {
     updateDeckList: updateDeckList
 }
 
+// export default connect(mapStateToProps, mapDispatchToProps)(UserDeck);
 export default connect(mapStateToProps, mapDispatchToProps)(UserDeck);

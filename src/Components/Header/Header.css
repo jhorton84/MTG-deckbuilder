@@ -1,6 +1,6 @@
 .header-component {
     /* background: black; */
-    height: 120px;
+    height: 20vh;
   }
   
   header {
@@ -47,7 +47,7 @@
   }
   
   .title h2 {
-    font-size: 20px;
+    font-size: 30px;
     margin: 5px;
     margin-bottom: 15px;
     color: rgb(193, 2, 2);
@@ -60,13 +60,13 @@
   
   header h1 {
     color: goldenrod;
-    font-size: 50px;
+    font-size: 100px;
     font-family: fantasy;
     /* margin-bottom: 0; */
   }
   
   header p {
-    font-size: 30px;
+    font-size: 50px;
     margin-left: 10px;
     margin-top: 20px;
     color: rgb(193, 2, 2);
@@ -82,18 +82,15 @@
     height: 50px;
   }
   .desktop-nav {
-    /* position: absolute; */
-    /* top: 110px; */
-    /* left:100px; */
-    /* background: pink; */
-    /* height: 100px; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 400px;
+    width: 30vw;
     color: white;
     margin-left: 50px;
     height: 50px;
+    font-size: 30px;
+    /* background: pink; */
   }
   
   .desktop-nav a {

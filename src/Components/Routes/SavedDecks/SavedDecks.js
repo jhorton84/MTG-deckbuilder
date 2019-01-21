@@ -56,15 +56,17 @@ class SavedDecks extends Component {
         )
         })
         return (
-            <div className='saved-decks'>
-                <div className='decks'>
-                {/* <div className='saved-title'>
-                    <h1>Saved Decks</h1>
-                </div> */}
-                    {userDecks}
-                </div>
-                <div className='userDeckCards'>
-                    <UserDeckCards />
+            <div className='SavedDecks-component'>
+                <div className='saved-decks'>
+                    <div className='decks'>
+                    {/* <div className='saved-title'>
+                        <h1>Saved Decks</h1>
+                    </div> */}
+                        {userDecks}
+                    </div>
+                    <div className='userDeckCards'>
+                        <UserDeckCards />
+                    </div>
                 </div>
             </div>
         )

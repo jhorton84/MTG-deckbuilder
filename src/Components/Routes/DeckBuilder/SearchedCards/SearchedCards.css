@@ -1,6 +1,6 @@
 /* cards searched (left side) */
 .searchedCards-deckbuilder {
-  height: calc(100vh - 300px);
+  height: calc(100vh - 34vh);
   width: 55%;
   overflow-y: scroll;
 }
@@ -72,4 +72,8 @@
   min-height: 260px;
   max-width: 186.25px;
   max-height: 260px;
+}
+
+@media screen and (max-width: 500px) {
+
 }

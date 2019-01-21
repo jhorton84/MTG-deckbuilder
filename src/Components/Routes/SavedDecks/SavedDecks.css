@@ -1,10 +1,16 @@
 /* SAVEDDECKS-COMPONENT page */
+.SavedDecks-component {
+  height: calc(100vh - 35vh);
+  /* width: 100%; */
+  display: flex;
+}
+
 .saved-decks{
-  height: calc(100vh - 290px);
+  height: calc(100vh - 35vh);
+  justify-content: center;
   display:flex;
-  /* justify-content: center; */
+  width: 100%;
   /* background: rgba(254, 254, 254, 0.071); */
-  flex-direction: column;
   flex-wrap: wrap;
   /* align-items: center; */
   
@@ -39,21 +45,23 @@
 }
 
 .decks {
-  width: 30%;
-  height: 90%;
+  width: 25%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background: rgba(255, 255, 255, 0.392);
   flex-wrap: wrap;
   overflow-y: scroll; 
-  /* overflow-y: hidden; */
+  overflow-x: hidden;
+  margin-right: 20px;
+  
 }
 
-.saved-decks img {
+/* .saved-decks img {
   height: 150px;
   margin: 25px;
-}
+} */
 
 .user-deck {
   margin: 10px;
@@ -107,10 +115,6 @@
   height: 200px;
 }
 
-.userDeckCards {
-  /* margin-top: 20px; */
-  width: 70%;
-  height: 100%;
-  /* background: red; */
-  
+@media screen and (max-width: 500px) {
+
 }
