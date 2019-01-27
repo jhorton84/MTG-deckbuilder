@@ -15,7 +15,7 @@ class CreateDeckName extends Component {
     saveDeckCards = () => {
         console.log('save deck props', this.props);
         const { deckList, deckImage, deckName, user } = this.props;
-        if(this.props.user) { 
+         
             let deck = {
                 deckName,
                 deckImage,
@@ -26,11 +26,11 @@ class CreateDeckName extends Component {
                 console.log(' saved decks ------->',response)
                 this.props.updateDecks(response.data);
             })
-        } else {
-            alert('You must log in to save a deck!')
         }
          
-    }
+        
+         
+    
     render(){
         return (
             <div className='CreateDeck-component'>

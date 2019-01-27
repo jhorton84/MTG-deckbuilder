@@ -45,6 +45,10 @@ class Header extends Component {
                             <NavLink activeClassName='active' exact to='/decks' >
                                 Saved Decks
                             </NavLink>
+                            
+                            <NavLink activeClassName='active' exact to='/Tips' >
+                                Tips
+                            </NavLink>
                         </div>
                     </div>
                 </header>

@@ -68,7 +68,8 @@ const mapStateToProps = state => {
         cardColor: state.cardColor,
         selectedCard: state.selectedCard,
         selectedName: state.selectedName,
-        deckList: state.deckList
+        deckList: state.deckList,
+        user: state.user
     }
 }
 

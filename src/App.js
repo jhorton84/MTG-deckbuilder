@@ -4,6 +4,7 @@ import './Components/Header/Header.css';
 import './Components/Routes/DeckBuilder/DeckBuilder.css';
 import './Components/Routes/DeckBuilder/SearchedCards/SearchedCards.css';
 import './Components/Routes/DeckBuilder/SearchTools/SearchTools.css';
+import './Components/Routes/Tips/Tips.css';
 import './Components/Routes/Home/Home.css';
 import './Components/Routes/DeckBuilder/UserDeck/UserDeck.css';
 import './Components/Routes/SavedDecks/UserDeckCards/UserDeckCards.css';
@@ -13,6 +14,7 @@ import './reset.css';
 import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import Home from './Components/Routes/Home/Home';
+import Tips from './Components/Routes/Tips/Tips';
 import Header from './Components/Header/Header';
 import DeckBuilder from './Components/Routes/DeckBuilder/DeckBuilder';
 import SavedDecks from './Components/Routes/SavedDecks/SavedDecks';
@@ -75,6 +77,7 @@ class App extends Component {
           <div className='routes-components'>
             <Switch>
               <Route exact path='/' component = {Home} />
+              <Route exact path='/tips' component = {Tips} />
               <Route exact path='/decks' component={SavedDecks} />
               <Route exact path='/deckbuilder' component={DeckBuilder} />
               <Route exact path='/createDeck/image' component={CreateDeckImage}/>

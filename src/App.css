@@ -43,11 +43,6 @@ body,
   display: none;
 }
 
-.active  {
-  color: goldenrod;
-
-}
-
 .auth0-lock-header-bg.auth0-lock-blur-support {
   background: black;
 }
