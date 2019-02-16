@@ -34,7 +34,7 @@ class App extends Component {
 
   componentDidMount() {
     axios.get('/auth/user-data').then(response => {
-      console.log('response.data user', response.data)
+      // console.log('response.data user', response.data)
       this.props.setUser( response.data.user )
       });
     
@@ -69,16 +69,20 @@ class App extends Component {
             </div>
                         
           </div>
+          
           <Header 
             login={this.login}
             logout={this.logout}
           />
+          
         <div className='main-components'>
           <div className='routes-components'>
             <Switch>
               <Route exact path='/' component = {Home} />
               <Route exact path='/tips' component = {Tips} />
+              
               <Route exact path='/decks' component={SavedDecks} />
+              
               <Route exact path='/deckbuilder' component={DeckBuilder} />
               <Route exact path='/createDeck/image' component={CreateDeckImage}/>
               <Route exact path='/createDeck/name' component={CreateDeckName}/>

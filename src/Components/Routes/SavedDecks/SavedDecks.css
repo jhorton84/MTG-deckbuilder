@@ -115,6 +115,46 @@
   height: 200px;
 }
 
+.name button {
+  position: static;
+  background: goldenrod;
+  color: black;
+  width: 50px;
+  height: 20px;
+  border-radius: 3px;
+  margin: 2px;
+}
+
+.update {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background: pink; */
+  /* height: 100%; */
+}
+
+.update-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: column; */
+  margin: 2px;
+  /* background: yellow;
+  height: 100%;
+  width: 100%; */
+}
+
+.update button {
+  position: static;
+  background: goldenrod;
+  color: black;
+  width: 50px;
+  height: 20px;
+  border-radius: 3px;
+  margin: 2px;
+}
+
 @media screen and (max-width: 500px) {
 
 }

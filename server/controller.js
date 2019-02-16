@@ -14,9 +14,9 @@ module.exports = {
 
     postToDeckCards: (req, res) => {
         
-        const {imageUrl, name} = req.body;
+        const {card, name} = req.body;
         const newMagicCard = {
-            imageUrl,
+            card,
             name: name.toLowerCase(),
             id
         }
@@ -116,6 +116,19 @@ module.exports = {
         const { id } = req.params;
         const db = req.app.get('db');
         db.delete_deck({id}).then(response => {
+            res.status(200).json(response);
+        })
+    },
+
+    updateDeck: (req, res) => {
+        const { id } = req.params;
+        // console.log('updateDeck params =======', req.params)
+        const { Name } = req.body;
+        console.log('req.body=========', req.body)
+        console.log('id in updateDeck controller', id);
+        const db = req.app.get('db');
+        db.update_deck({id, Name}).then(response => {
+            console.log('response=======', response)
             res.status(200).json(response);
         })
     }

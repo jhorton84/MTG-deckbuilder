@@ -11,6 +11,7 @@ class UserDeckCards extends Component {
     }
 
     render() {
+        
         console.log('-----------++++ userDeckCards',this.props.userDeckCards)
         const userDeckCardsList = this.props.userDeckCards.map(card => {
             console.log('cards from the deck', card)

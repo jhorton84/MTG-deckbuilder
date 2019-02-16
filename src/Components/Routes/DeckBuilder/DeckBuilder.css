@@ -47,7 +47,8 @@
   
 .selectedCard-imageContainer button {
     position: absolute;
-    right: -10px;
+    right: 0px;
+    top: 0;
 }
   
 /* image of the selected card */
@@ -58,6 +59,54 @@
     max-height: 520px;
     /* z-index: 50; */
 }
+
+/* each individual card with multiple faces and flip */
+.flip-card-select {
+    /* background-color: black; */
+    /* min-width: 186.25px;
+    min-height: 260px;
+    max-width: 186.25px;
+    max-height: 260px; */
+    /* border: 1px solid #f1f1f1; */
+    perspective: 1000px;
+  }
+  .flip-card-inner-select {
+    position: relative;
+    min-width: 372.5px;
+    min-height: 520px;
+    max-width: 372.5px;
+    max-height: 520px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  .flip-card-select:focus-within .flip-card-inner-select {
+    transform: rotateY(180deg);
+  }
+  .magic-card-front-select, .magic-card-back-select {
+    position: absolute;
+    min-width: 372.5px;
+    min-height: 520px;
+    max-width: 372.5px;
+    max-height: 520px;
+    backface-visibility: hidden;
+  }
+  .magic-card-front-select {
+    /* background-color: #bbb; */
+    color: black;
+    min-width: 372.5px;
+    min-height: 520px;
+    max-width: 372.5px;
+    max-height: 520px;
+  }
+  .magic-card-back-select {
+    /* background-color: dodgerblue; */
+    /* color: white; */
+    transform: rotateY(180deg);
+    min-width: 372.5px;
+    min-height: 520px;
+    max-width: 372.5px;
+    max-height: 520px;
+  }
 /* button on the selected card that puts the card in decklist */
 .selectedCard-add {
     /* margin: 15px; */
@@ -83,7 +132,22 @@
     margin-top: 0;
     /* top: 10px; */
 }
-  
+
+.magic-card-front-select button {
+    position: absolute;
+    top: 100px;
+    right: -20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    backface-visibility: hidden;
+}
+
+.magic-card-back-select button {
+    position: absolute;
+    top: 100px;
+}
+
 .selectedCard-container h2 {
     font-size: 50px;
     

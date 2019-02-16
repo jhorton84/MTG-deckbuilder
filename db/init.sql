@@ -8,7 +8,6 @@ create table if not exists users (
     email varchar(50) not null,
     picture text,
     auth0_id text
-    
 );
 
 create table if not exists decks (

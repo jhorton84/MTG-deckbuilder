@@ -21,10 +21,11 @@ class Header extends Component {
     }
 
     render() {
-        console.log('username', this.props.user)
+        
+        // console.log('username', this.props.user)
         const { user } = this.props;
-        console.log('props-header', this.props)
-        console.log('state ====>', this.state)
+        // console.log('props-header', this.props)
+        // console.log('state ====>', this.state)
         return (
             <div className='header-component'>
                 <header>

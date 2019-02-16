@@ -29,10 +29,10 @@
 /* each individual card with multiple faces and flip */
 .flip-card {
   /* background-color: black; */
-  min-width: 186.25px;
+  /* min-width: 186.25px;
   min-height: 260px;
   max-width: 186.25px;
-  max-height: 260px;
+  max-height: 260px; */
   /* border: 1px solid #f1f1f1; */
   perspective: 1000px;
 }
@@ -45,7 +45,7 @@
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
-.flip-card:hover .flip-card-inner {
+.flip-card:focus-within .flip-card-inner {
   transform: rotateY(180deg);
 }
 .magic-card-front, .magic-card-back {
@@ -64,6 +64,29 @@
   max-width: 186.25px;
   max-height: 260px;
 }
+
+.flip-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: red; */
+}
+
+.magic-card-front button {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  top: 80px;
+  right: -5px;
+  backface-visibility: hidden;
+  background-image: url('../../../../images/flip.png');
+}
+
+.flip-button img {
+  height: 25px;
+}
+
 .magic-card-back {
   /* background-color: dodgerblue; */
   /* color: white; */
