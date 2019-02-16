@@ -1,132 +1,259 @@
+.header-component {
+  /* background: black; */
+  height: 20vh;
+}
+
 header {
-  background-size: auto 100%;
-  background-color: black;
-  z-index: 400;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-* {
-  line-height: 1.3em;
-  text-size-adjust: 100%;
-}
-nav {
-  background-color: black;
-}
-nav a {
+  height: 100%;
+  width: 100%;
+  margin: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  justify-content: space-around;
   color: white;
-  text-decoration: none;
-}
-nav a:hover {
-  color: #be630e;
-}
-
-.wrapper {
-  width: 100%;
-  padding: 0 10px;
+  background-image: url('https://geekandsundry.com/wp-content/uploads/2017/04/Magic-Feature.png');
+  /* background-attachment: fixed; */
+  background-size: cover;
+  background-position-y: -50px;
+  box-shadow: 0 5px 15px rgb(18, 18, 18);
 }
 
-header .wrapper {
-  max-width: 1200px;
-  height: 60px;
-  margin: 0 auto;
+.logo img {
+  height: 150px;
+  transform: rotate(-5deg);
+  display: none;
 }
 
-#menu ul.main-menu li.top_level>a, #menu ul.main-menu li.top_level_right>a, #menu ul.main-menu li.cta>a {
-  width: 100%;
+.header-fade {
+  background: rgba(1, 1, 1, 0.563);
+  width: 100vw;
   height: 100%;
   display: flex;
-  -webkit-box-align: center;
+  justify-content: space-around;
   align-items: center;
-  transition: .25s ease;
-  /* transition-duration: 0.25s;
-  transition-property: color, background-color;
-  transition-timing-function: ease;
-  transition-delay: 0s; */
-  position: relative;
+  margin-right: 50px;
+  margin-left: 0px;
 }
 
-#menu a, #menu p {
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.0em;
-  text-transform: uppercase;
-}
-#menu a {
-  text-decoration: none
-}
-#menu * {
-  outline: none;
-}
-#menu {
+
+.title {
+  height: 50px;
   display: flex;
-  z-index: 400;
-  width: 100%;
-  /* height: 60px; */
-  -webkit-box-align: center;
   align-items: center;
+  text-shadow: 2px 2px 2px #000;
+  /* background: green; */
 }
-a {
-  cursor: pointer;
+
+.title h2 {
+  font-size: 30px;
+  margin: 5px;
+  margin-bottom: 15px;
+  color: rgb(193, 2, 2);
+  font-family: fantasy;
 }
-#menu .top_level .mega_menu {
-  background-color: rgba(0,0,0,0,.97);
-  position: absolute;
-  top: 59px;
-  left: 0;
-  right: 0;
-  height: 0;
-  list-style: none;
-  margin: 0;
-  border-top-width: 3px;
-  border-top-color: #e94c13;
-  border-top-style: solid;
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity .25s ease;
-  pointer-events: none;
+
+.small-title {
+  margin-bottom: 15px;
 }
-#menu .top_level>a:after {
-  position: absolute;
-  top: 60px;
-  transform: scaleY(0);
-  transform-origin: 50% 0;
+
+header h1 {
+  color: goldenrod;
+  font-size: 100px;
+  font-family: fantasy;
+  /* margin-bottom: 0; */
 }
-#menu .mega_menu_content .img-with-label img {
-  display: block;
-  max-height: 250px;
-  margin: 0 auto 10px auto;
+
+header p {
+  font-size: 50px;
+  margin-left: 10px;
+  margin-top: 20px;
+  color: rgb(193, 2, 2);
+  font-family: fantasy;
 }
-#menu .mega_menu_content li.column li {
-  width: 100%;
-  margin: 0;
+
+.nav-links {
+  /* position: absolute; */
+  left:100px;
+  width: 50%;
+  color: white;
+  margin-left: 100px;
+  height: 50px;
 }
-#menu .top_level .mega_menu_content li {
-  display: block;
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 40vw;
+  color: white;
+  margin-left: 50px;
+  height: 50px;
+  font-size: 30px;
+  /* background: pink; */
+}
+
+.desktop-nav a {
+  margin: 15px;
+  text-decoration: none;
+}
+
+header a {
+  color: white;
+}
+
+header button {
+  display: none;
+}
+
+ .nav-links a {
+  margin-left: 25px;
+  /* color: white; */
+  text-decoration: none;
+  font-size: 25px;
+  text-shadow: 2px 2px 2px #000;
+  color: white;
+}
+
+/* .active  {
+  color: goldenrod;
+  background: black;
+} */
+
+.desktop-nav .active {
+  color: goldenrod;
+  /* background-color: black; */
+}
+
+.login {
+  /* height: 150px; */
+  background: rgb(196, 196, 196);
+  display: flex;
+  /* width: 20vw; */
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.logged-user {
+  /* height: 80px; */
+  /* background: green; */
   position: relative;
-  height: auto;
-  list-style: none;
-  background-color: transparent;
-}
-ul li.leaf {
-  /* list-style-type: square; */
-}
-li.expanded, li.collapsed, li.leaf {
-  padding: .2em .5em 0 0 ;
-
-}
-li {
-  text-align: -webkit-match-parent;
+  display: flex;
+  align-items: center;
+  z-index: 11;
+  justify-content: flex-end;
+  /* flex-direction: column; */
+  margin-right: 50px;
+  
+  /* font-size: 20px; */
 }
 
-@media (max-width: 1919px) {
-  header .wrapper {
-    width: 100%;
-    padding: 0 10px;
+.logged-user img {
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: 2px 2px 2px rgb(16, 16, 16);
+}
+
+.logged-user button {
+  margin: 5px;
+  background: goldenrod;
+  color: black;
+  border-radius: 3px;
+  border: none;
+  /* box-shadow: 2px 2px 2px #000; */
+  /* text-shadow: 1px 1px 1mpx rgb(0, 0, 0); */
+}
+
+.logged-user button:hover {
+  background: rgb(224, 191, 107);
+  /* box-shadow: 2px 2px 2px rgb(255, 255, 255); */
+}
+
+
+
+@media screen and (max-width: 500px) {
+  .header-component {
+  
+  }
+  nav {
+    position: relative;
+    margin: 0px;
+    background: rgb(58, 58, 58);
+    height: 100px;
+    background-image: url('https://geekandsundry.com/wp-content/uploads/2017/04/Magic-Feature.png');
+    background-size: cover;
+    z-index: 4;
+  }
+
+  .login {
+    position: relative;
+    z-index: 11;
+  }
+  .logged-user {
+    margin-right: 10px;
+    position: relative;
+    z-index: 11;
+  }
+  .logo img {
+    height: 50px;
+    display: none;
+  }
+  
+  .header-fade {
+    margin-left: 20px;
+  }
+  
+  
+  .title {
+    margin-right: 150px;
+  }
+  
+  .title h2 {
+    font-size: 10px;
+  }
+  
+  nav h1 {
+    font-size: 30px;
+  }
+  
+  nav p {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: 20px;
+    color: rgb(193, 2, 2);
+    font-family: fantasy;
+    width: 120px;
+    
+  }
+
+  nav button {
+    display: flex;
+    position: absolute;
+    color: black;
+    top: 75px;
+    z-index: 12;
+    background: goldenrod;
+    border-radius: 3px;
+    border: none;
+    width: 50px;
+    /* height: 25px; */
+  }
+  
+  .nav-links a {
+    position: relative;
+    margin-top: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    text-shadow: 2px 2px 2px #000;
+    top: 10px;
+    left: 50px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* z-index: 51; */
+    /* background: pink; */
+    
   }
 }
