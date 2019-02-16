@@ -14,7 +14,7 @@ header {
   justify-content: space-around;
   color: white;
   background-image: url('https://geekandsundry.com/wp-content/uploads/2017/04/Magic-Feature.png');
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   background-size: cover;
   background-position-y: -50px;
   box-shadow: 0 5px 15px rgb(18, 18, 18);
