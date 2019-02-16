@@ -42,6 +42,7 @@ app.delete('/api/gathering/:id', cc.deleteDeckCard);
 app.get('/api/decks/:id', cc.getDecks);
 app.post('/api/decks', cc.createDeck);
 app.delete('/api/decks/:id', cc.deleteDeck);
+app.put('/api/decks/:id', cc.updateDeck);
 app.get('/api/deckCards/:id', cc.getUserDeckCards);
 
 const path = require('path')

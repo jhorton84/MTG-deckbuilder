@@ -66,9 +66,6 @@
   margin-top: 30px;
   margin-left: 10px;
   margin-right: 10px;
-  /* flex-direction: row; */
-  /* width: 100%; */
-  /* height: 100%; */
   overflow-y: scroll;
   overflow-x: hidden;
   flex-wrap: wrap;
@@ -80,35 +77,191 @@
   position: relative;
   /* background: pink;
   border: solid white; */
+  top: 10px;
+}
+
+.DeckListCard-component {
+  /* background: red; */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deck-cards {
+  /* background: gray; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 /* each deck card and the button container */
 .decklist-card {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   flex-direction: column;
   position: relative;
-  margin: 10px;
+  margin: 20px;
+  height: 100%;
   
 }
-/* images of deck cards */
-.decklist-card img {
+
+.deckListCard-container {
+  /* display: flex; */
+}
+
+.deckListCard-imageContainer {
+  /* display: flex; */
+}
+
+.deckListCard-imageContainer img {
   min-width: 93.125px;
   min-height: 130px;
   max-width: 93.125px;
   max-height: 130px;
   margin: 3px;
 }
+
+
+/* images of deck cards */
+/* .decklist-card img {
+  min-width: 93.125px;
+  min-height: 130px;
+  max-width: 93.125px;
+  max-height: 130px;
+  margin: 3px;
+} */
+
+
+
+/* each individual card with multiple faces and flip */
+.flip-card-deckList {
+  /* background-color: black; */
+  /* min-width: 186.25px;
+  min-height: 260px;
+  max-width: 186.25px;
+  max-height: 260px; */
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px;
+}
+.flip-card-inner-deckList {
+  position: relative;
+  /* min-width: 100px;
+  min-height: 130px;
+  max-width: 93.125px;
+  max-height: 130px; */
+  /* height: 100%;
+  width: 100%; */
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card-deckList:focus-within .flip-card-inner-deckList {
+  transform: rotateY(180deg);
+}
+.magic-card-front-deckList, .magic-card-back-deckList {
+  /* position: relative; */
+  /* min-width: 93.125px;
+  min-height: 130px;
+  max-width: 93.125px;
+  max-height: 130px; */
+  /* width: 100%;
+  height: 100%; */
+  /* background: yellow; */
+  backface-visibility: hidden;
+  top: 0;
+  /* padding: 10px; */
+}
+.magic-card-front-deckList {
+  /* background-color: #bbb; */
+  position: absolute;
+  color: black;
+  /* min-width: 93.125px;
+  min-height: 130px;
+  max-width: 93.125px;
+  max-height: 130px; */
+  margin: 0px;
+}
+
+
+
+.magic-card-front-deckList img {
+  min-width: 93.125px;
+  min-height: 130px;
+  max-width: 93.125px;
+  max-height: 130px;
+  margin: 3px;
+}
+.magic-card-back-deckList {
+  /* background-color: dodgerblue; */
+  /* color: white; */
+  transform: rotateY(180deg);
+  min-width: 93.125px;
+  min-height: 130px;
+  max-width: 93.125px;
+  max-height: 130px;
+}
+
 /* delete button on deck cards */
-.decklist-card .delete {
+/* .decklist-card .delete {
   width: 25px;
   height: 25px;
   border-radius: 50%;
   color: white;
   background-color: black;
+  position: relative;
+  top: -135px;
+  right: -50px;
+} */
+
+/* this is the flip button on deckList cards */
+.magic-card-front-deckList >  button {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: 35px;
+  right: -5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  background-image: url('../../../../images/flip.png');
+}
+
+.magic-card-front-decklist .flip-button img{
+  height: 10px;
+  background: green;
+}
+
+.deckListCard-imageContainer .delete {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -5px;
+  right:-5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+}
+
+.flip-button-decklist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-button-decklist img{
+  max-height: 25px;
+  min-height: 25px;
+  max-width: 18px;
+  min-width: 18px;
+  position: relative;
+  bottom: 2px;
+  backface-visibility: hidden;
+  /* background: green; */
 }
 
 @media screen and (max-width: 500px) {

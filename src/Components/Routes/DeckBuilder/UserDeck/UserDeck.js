@@ -15,6 +15,7 @@ class UserDeck extends Component {
     }
 
     componentDidMount() {
+        
         axios.get('/api/gathering').then(response => {
             this.props.updateDeckList(response.data)
         })
@@ -29,7 +30,7 @@ class UserDeck extends Component {
                 <div key={card.id} className='card'>
                     <DeckListCard 
                         id={card.id}
-                        imageCard={card.imageUrl}
+                        card={card}
                         deleteDeckCard={this.props.deleteDeckCard}
                         updateDeckCard={this.props.updateDeckCard}
                     />
@@ -72,7 +73,7 @@ const mapStateToProps = state => {
         user: state.user
     }
 }
-
+console.groupEnd('-------End UserDeck logs')
 const mapDispatchToProps = {
     updateDeckList: updateDeckList
 }

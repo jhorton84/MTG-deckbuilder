@@ -24,6 +24,7 @@ class DeckBuilder extends Component {
     }
 
     componentDidMount() {
+        
         // this.displayCards();
         this.getInitialCards();
         // this.getDeckFromServer();
@@ -36,15 +37,15 @@ class DeckBuilder extends Component {
         })
     }
 
-    searchCards = () => {
-        const searchName = this.props.searchName ? "name&q="+this.props.searchName : '';
-        const colors = this.state.colorWhite || this.state.colorBlue || this.state.colorBlack || this.state.colorRed || this.state.colorGreen || this.state.colorLess ? '+color%3D'+this.state.colorWhite+this.state.colorBlue+this.state.colorBlack+this.state.colorRed+this.state.colorGreen+this.state.colorLess : '';
-        const searchText = this.props.searchText ? 'oracle%3A'+this.props.searchText : '';
-        const cardType = this.props.cardType ? 'type%3A'+this.props.cardType : '';
-        axios.get(`https://api.scryfall.com/cards/search?as=grid&order=${searchName}+${searchText}+${cardType}${colors}`).then(response => {
-            this.props.updateCards(response.data.data)
-        })
-    }
+    // searchCards = () => {
+    //     const searchName = this.props.searchName ? "name&q="+this.props.searchName : '';
+    //     const colors = this.state.colorWhite || this.state.colorBlue || this.state.colorBlack || this.state.colorRed || this.state.colorGreen || this.state.colorLess ? '+color%3D'+this.state.colorWhite+this.state.colorBlue+this.state.colorBlack+this.state.colorRed+this.state.colorGreen+this.state.colorLess : '';
+    //     const searchText = this.props.searchText ? 'oracle%3A'+this.props.searchText : '';
+    //     const cardType = this.props.cardType ? 'type%3A'+this.props.cardType : '';
+    //     axios.get(`https://api.scryfall.com/cards/search?as=grid&order=${searchName}+${searchText}+${cardType}${colors}`).then(response => {
+    //         this.props.updateCards(response.data.data)
+    //     })
+    // }
 
     searchCards = () => {
     console.log('searchCards', this.props.searchName)
@@ -1540,8 +1541,10 @@ class DeckBuilder extends Component {
 }
 
     setCard = card => {
-        console.log('selectedCard', card.card_faces ? card.card_faces[0].image_uris.png :card.image_uris.png, 'card name', card.name)
-        this.props.updateSelectedCard(card.card_faces ? card.card_faces[0].image_uris.png ? card.card_faces[0].image_uris.png : card.image_uris.png : card.image_uris.png)
+        // console.log('selectedCard', card.card_faces ? card.card_faces[0].image_uris.png :card.image_uris.png, 'card name', card.name)
+        // this.props.updateSelectedCard(card.card_faces ? card.card_faces[0].image_uris.png ? card.card_faces[0].image_uris.png : card.image_uris.png : card.image_uris.png)
+        console.log('-----card', card);
+        this.props.updateSelectedCard(card)
         // this.props.updateSelectedCardBack()  ----- perhaps create a function where you pass in the other side of the card with a card_faces??
         this.props.updateSelectedName(card.name)
     }
@@ -1550,7 +1553,7 @@ class DeckBuilder extends Component {
      addCardToDeckList = () => {
         
         const savedCard = {
-            imageUrl: this.props.selectedCard,
+            card: this.props.selectedCard,
             name: this.props.selectedName,
             
         }
@@ -1570,6 +1573,7 @@ class DeckBuilder extends Component {
 
     //This function is used to update a card in the deck by swapping it with another card.
     updateDeckCard = (id) => {
+        console.log('---selectedCard', this.props.selectedCard)
         const updatedCard = {
         imageUrl: this.props.selectedCard,
         name: this.props.selectedName
@@ -1639,6 +1643,7 @@ class DeckBuilder extends Component {
     // }
 
     render() {
+console.log(this.props.selectedCard);
 
         return (
             <div className='deckbuilder-component'>
@@ -1686,17 +1691,36 @@ class DeckBuilder extends Component {
                 {/* <div className='magic-cards'>
                     {magicCards}
                 </div> */}
-                
+                {this.props.selectedCard && 
                 <div className={this.props.selectedCard ?'selectedCard-background' : 'hide'}>
                     <div className='selectedCard-container'>
-                        <h2>{this.props.selectedName}</h2>
+                        {/* <h2>{this.props.selectedName}</h2> */}
                         <div className='selectedCard-imageContainer'>
-                            <img src={this.props.selectedCard} alt=''/>
+                        {/* card.card_faces ? card.card_faces[0].image_uris.png ? card.card_faces[0].image_uris.png : card.image_uris.png : card.image_uris.png */}
+                        {this.props.selectedCard.card_faces ? 
+                            this.props.selectedCard.card_faces[0].image_uris.png ?  
+                            <div className='flip-card-select'> 
+                                <div className='flip-card-inner-select'>
+                                    <div className='magic-card-front-select'>
+                                        <img className='magic-card-select' src={this.props.selectedCard.card_faces[0].image_uris.png} />
+                                        <button className='flip-button' >Flip</button>  
+                                    </div>
+                                    <div className='magic-card-back-select'>
+                                        <img className='magic-card-select' src={this.props.selectedCard.card_faces[1].image_uris.png}/> 
+                                        {/* <button className='flip-button' >Flip</button> */}
+                                    </div>
+                                </div>
+                            </div> 
+                            : <img src={this.props.selectedCard.image_uris.png} /> 
+                        : <img src={this.props.selectedCard.image_uris.png} />}
+                            {/* <img src={this.props.selectedCard.image_uris.png} /> */}
+                            {/* <img src={this.props.selectedCard} alt=''/> */}
                             <button className='cancel' onClick={()=>this.cancelSelectCard()}>X</button>
                         </div>
                         <button className='selectedCard-add' onClick={()=>{this.addCardToDeckList()}}>Add to Deck</button>
                     </div>
                 </div>
+                }
             </div>
         )
     }
