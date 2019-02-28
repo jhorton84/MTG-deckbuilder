@@ -1,19 +1,21 @@
-let deckCards = [];
+// let deckCards = [];
 let id = 0;
 
 module.exports = {
-    checkDeckCards: (req, res) => {
-       return req.session.deckCards = [];
-        // deckCards = [];
-    },
-
     readDeckCards:  (req, res) => {
-        
-        res.status(200).send(deckCards)
+        const {deckCards} = req.session;
+        if(req.session.deckCards) {
+            res.status(200).send(deckCards)    
+        }else {
+            req.session.deckCards = []
+            res.status(200).send(deckCards)
+        }
+        console.log('deckCards', deckCards);
+        console.log('req.session', req.session);
     },
 
     postToDeckCards: (req, res) => {
-        
+        console.log('session!', req.session);
         const {card, name} = req.body;
         const newMagicCard = {
             card,
@@ -22,6 +24,7 @@ module.exports = {
         }
         
         // req.session.deckCards = deckCards;
+        const {deckCards} = req.session;
         deckCards.push(newMagicCard)
         id++
         console.log('deckCard added', deckCards[deckCards.length-1]);
@@ -42,6 +45,8 @@ module.exports = {
     },
 
     deleteDeckCard: (req, res) => {
+        const {deckCards} = req.session;
+        console.log('deckCards', deckCards);
         
         const {id} = req.params;
         deckCards = deckCards.filter(card => {
