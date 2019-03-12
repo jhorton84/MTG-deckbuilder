@@ -1,6 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## MTG Deckbuilder
+[https://mtgbuilder.site](https://mtgbuilder.site)
 
 This app is a personal project created for a school assignment, and my first React app.
 
