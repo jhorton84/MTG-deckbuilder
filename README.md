@@ -1,5 +1,19 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## MTG Deckbuilder
+
+This app is a personal project created for a school assignment, and my first React app.
+
+### Building a Deck
+
+The Deckbuilder component allows you to search through the scryfall api [https://scryfall.com/](https://scryfall.com/) by a card's name, description text, card type, and color(s).
+
+By selecting a card you can choose to add it to your personalized deck. When finished, click the SAVE DECK button to create a new deck and assign all your current cards to that deck. 
+
+### Saved Decks
+
+Once a deck is saved it can be viewed after logging in on the Saved Decks component. Click on the link in the navbar to go there. Selecting the chosen image for the deck when created will render the cards assigned to that deck for viewing.
+
 ## Available Scripts
 
 In the project directory, you can run:
